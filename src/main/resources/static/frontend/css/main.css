@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    /* display: block; */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+/* fonts */
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: local('Pretendard Variable'), url('./images/PretendardVariable.woff2') format('woff2-variations');
+}
+
+/* thin */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-display: swap;
+}
+/* extra-light */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+}
+/* light */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+}
+/* regular */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+/* medium */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}
+/* semi-bold */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+}
+/* bold */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+}
+/* extra-bold */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+}
+/* black */
+@font-face {
+    font-family: 'Pretendard';
+    src: url('./images/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-display: swap;
+}
+
+
+body {
+    background-image: url('../png/main.png');
+    background-size: cover;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    justify-items: center;
+}
+
+.logo {
+    font-size: 30px;
+    font-family: Pretendard;
+    font-weight: 600;
+    color: white;
+    padding-left: 100px;
+}
+
+.nav-container a {
+    font-family: 'Pretendard';
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+    margin-left: 80px;
+    width: 150px;
+}
+
+.nav-container {
+    padding-right: 100px;
+}
+
+.nav-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 54px;
+}
+
+
+.where-text {
+    font-size: 50px;
+    font-family: Pretendard;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 26px;
+    text-align: left;
+}
+
+.check-box-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.check-box {
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.check-box p{
+    font-size: 14px;
+    font-family: Pretendard;
+    font-weight: 600;
+    color: #f5f5f5;
+    margin-bottom: 10px;
+    opacity: 0.8;
+    /* text-shadow: 0 0 2px rgba(0, 0, 0, 0.25); */
+    text-align: left;
+}
+
+
+.main-box {
+    width: 1000px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    justify-items: center;
+    margin: 220px 16% 0px 16%;
+}
+
+.line {
+    width: 1000px;
+    height: 2.3px;
+    transform: rotate(-359.83deg);
+    opacity: 0.4;
+    background-color: #f5f5f5;
+    place-content: center;
+    margin-bottom: 26px;
+  }
+/* .line {
+    width: 840px;
+    height: 1px;
+    margin: 40px 0 10px 0;
+    border-top: 1px solid #EBEBEB;
+}
+   */
+  .hr-wrap {
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .in-wrap {
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+    justify-items: center;
+
+  }
+
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+
+select {
+  /* 생략 */
+    font-family: "Noto Sansf KR", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    color: #444;
+    background-color: #fff;
+    background-color:rgba(255, 255, 255, 0.5);
+    /* opacity: 0.3; */
+
+    padding: 0.6em 6.8em 0.7em 6.8em;
+    margin: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 0.5em;
+    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+
+    -webkit-appearance:none; /* 크롬 화살표 없애기 */
+    -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
+    appearance:none /* 화살표 없애기 */
+}
+
+select:hover {
+    border-color: #888;
+  }
+  
+select:focus {
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px #aaa;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
+  
+select:disabled {
+    opacity: 0.5;
+  }
+
+/* input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat; 
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+ } */
+ 
+input {
+    font-family: "Noto Sansf KR", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #444;
+  /* background-color: #fff; */
+  background-color:rgba(255, 255, 255, 0.5);
+  /* opacity: 0.3; */
+
+  padding: 0.6em 5em 0.5em 5em;
+  margin: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0.5em;
+  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+ }
+
+ input:focus{
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px #aaa;
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+ }
+
+input:hover {
+    border-color: #888;
+}
+
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="date"]::-webkit-inner-spin-button {
+     display: none;
+     appearance: none;
+ }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    /* background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) center/80% no-repeat white;;  */
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+    cursor: pointer;
+}
