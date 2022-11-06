@@ -10,6 +10,8 @@ public class MainController {
 
     @GetMapping("/")
     public String main() {
-        return "frontend/html/main.html";
+        return "frontend/main";
+//        return "backend/hello";
     }
+
 }
