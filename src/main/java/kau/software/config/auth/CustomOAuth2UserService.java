@@ -3,6 +3,7 @@ package kau.software.config.auth;
 import kau.software.config.auth.dto.OAuthAttributes;
 import kau.software.domain.user.UserRepository;
 import kau.software.domain.user.Users;
+import kau.software.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -45,6 +46,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
                 .map(entity -> entity.update(attributes.getName()))
                 .orElse(attributes.toEntity());
 
+        userRepository.save(user);
         return user;
     }
 }

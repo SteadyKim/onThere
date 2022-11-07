@@ -13,18 +13,16 @@ public class OAuthAttributes {
     private String nameAttributeKey;
     private String email;
     private String name;
-    private String number;
     private String oauth;
 
     @Builder
     public OAuthAttributes(Map<String, Object> attributes,
-                           String nameAttributeKey, String email, String name, String number, String oauth) {
+                           String nameAttributeKey, String email, String name, String oauth) {
 
         this.attributes = attributes;
         this.email = email;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
-        this.number = number;
         this.oauth = oauth;
     }
 
@@ -62,6 +60,7 @@ public class OAuthAttributes {
 
     public Users toEntity() {
         return Users.builder()
+                .email(email)
                 .name(name)
                 .oauth(oauth)
                 .role(Role.GUEST)
