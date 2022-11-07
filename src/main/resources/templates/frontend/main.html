@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +13,11 @@
 
     <nav class="nav-wrap">
         <p class="logo">OnThere</p>
-
-        <div class="nav-container">
-            <a href="/logins">Login</a>
-            <a href="">Join</a>
-            <a href="">Mypage</a>
+        <div  class="nav-container">
+            <a th:if="${session.user}" href="/logout">Logout</a>
+            <a th:unless="${session.user}" href="/logins">Login</a>
+            <a th:unless="${session.user}" href="">Join</a>
+            <a th:if="${session.user}" href="">Mypage</a>
         </div>
     </nav>
 
