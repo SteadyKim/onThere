@@ -50,7 +50,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         userRepository.save(user);
         /**
-         * 세션 저장장
+         * 세션 저장
         */
         httpSession.setAttribute("user", user);
 
