@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Entity
 @NoArgsConstructor
-public class Member {
+public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,15 +25,35 @@ public class Member {
     private String name;
 
     @Column
+    private String email;
+
+    @Column
     private String oauth;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
 
 
     @Builder
-    public Member(String userId, String password, String name, String oauth) {
+    public Users(String userId, String password, String name, String oauth, Role role, String email) {
         this.userId = userId;
         this.password = password;
         this.name = name;
         this.oauth = oauth;
+        this.role = role;
+        this.email = email;
     }
+
+    public Users update(String name) {
+        this.name = name;
+
+        return this;
+    }
+
+    public String getRoleKey() {
+        return this.role.getKey();
+    }
+
 
 }
