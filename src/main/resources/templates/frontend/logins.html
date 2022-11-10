@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="frontend/css/login.css" type="text/css">
+</head>
+
+<body>
+
+    <main>
+        <div class="try">
+            <h1>OnThere</h1>
+
+            <p class="social-login-title">다른 계정으로 로그인</p>
+
+            <div class="social-login-container">
+                <img style="cursor: pointer;" src="frontend/png/google.png" alt=""  onclick="">
+                <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="">
+            </div>
+            
+            <form class="login-form" method="post" action=''>
+
+                <div class="login-input-container ">
+                    <p>ID</p>
+                    <input type="text"  name="username" class="account" placeholder="ID 입력">
+                </div>
+                    
+                <div class="login-input-container">
+                    <p>PW</p>
+                    <input type="password" name="password" class="account" placeholder="비밀번호 입력">
+                </div>
+                <!--
+                <input type="hidden" name="remember_session" value="1">
+                -->
+                <button class="login" type="submit" onclick="">로그인</button>
+
+            </form>
+
+
+        </div>
+    </main>
+</body>
+</html>

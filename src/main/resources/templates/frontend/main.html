@@ -13,7 +13,7 @@
 
     <nav class="nav-wrap">
         <p class="logo">OnThere</p>
-        <p  th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
         <div  class="nav-container">
             <a th:if="${session.user}" href="/logout">Logout</a>
             <a th:unless="${session.user}" href="/logins">Login</a>

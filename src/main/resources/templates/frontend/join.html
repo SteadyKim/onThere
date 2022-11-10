@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="frontend/css/join.css" type="text/css">
+</head>
+
+<body>
+    <main>
+        <form class="login-form" method="post" action='' th:object="${userDto}">
+            <div class="try">
+                <h1>OnThere</h1>
+                <div class="essential-notice">
+                    
+                    <div class="essentail-notice-box">
+                        <p class="essential-notice-star">*</p>
+                        <p class="essential-notice-title">필수입력</p>
+                    </div>
+                </div>
+
+                <div class="client-signup-container">
+                    <p class="">*</p>
+                    <input type="text" name="mb_name" th:field="*{name}" placeholder="이름">
+                </div>
+
+                <div class="client-signup-container">
+                    <input type="text" name="email" th:field="*{email}" placeholder="이메일">
+                </div>
+
+                <div class="base-signup-wrap">
+                    <div class="base-signup-container">
+                        <p>*</p>
+                        <input type="text" name="username" th:field="*{userId}" placeholder="ID">
+                    </div>
+
+                    <div class="base-signup-container">
+                        <p>*</p>
+                        <input type="password" name="password" th:field="*{password}"placeholder="PASSWORD">
+                    </div>
+
+                    <div class="base-signup-container">
+                        <p>*</p>
+                        <input type="password" name="passwordCheck" placeholder="비밀번호 확인">
+                    </div>
+                </div>    
+
+                <input class="signup-btn" type="submit" value="가입하기">
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

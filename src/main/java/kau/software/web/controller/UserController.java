@@ -22,7 +22,7 @@ public class UserController {
     @GetMapping("/logins")
     public String login() {
 
-        return "backend/logins";
+        return "frontend/logins";
     }
 
     @GetMapping("/logout")
@@ -37,7 +37,7 @@ public class UserController {
     public String joinForm(Model model) {
         model.addAttribute("userDto", new CreateUserDto());
 
-        return "backend/join";
+        return "frontend/join";
     }
 
     @PostMapping("/join")
