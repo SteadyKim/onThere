@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -22,16 +22,16 @@
                 <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="">
             </div>
             
-            <form class="login-form" method="post" action=''>
+            <form class="login-form" method="post" action='' th:object = "${loginUserDto}">
 
                 <div class="login-input-container ">
                     <p>ID</p>
-                    <input type="text"  name="username" class="account" placeholder="ID 입력">
+                    <input type="text"  name="username" class="account" th:field="*{userId}" placeholder="ID 입력">
                 </div>
                     
                 <div class="login-input-container">
                     <p>PW</p>
-                    <input type="password" name="password" class="account" placeholder="비밀번호 입력">
+                    <input type="password" name="password" class="account" th:field="*{password}" placeholder="비밀번호 입력">
                 </div>
                 <!--
                 <input type="hidden" name="remember_session" value="1">

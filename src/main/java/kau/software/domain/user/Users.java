@@ -10,13 +10,18 @@ import javax.persistence.*;
 @Getter @Setter
 @Entity
 @NoArgsConstructor
+@Table(
+        name="USERS",
+        uniqueConstraints=
+        @UniqueConstraint(columnNames={"USER_ID"})
+)
 public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "USER_ID")
     private String userId;
 
     @Column
