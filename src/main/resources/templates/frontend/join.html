@@ -28,7 +28,8 @@
                 </div>
 
                 <div class="client-signup-container">
-                    <input type="text" name="email" th:field="*{email}" placeholder="이메일">
+                    <input th:if="${session.email}"  type="text" name="email" th:value ="${session.email}" placeholder="이메일" readonly>
+                    <input th:unless="${session.email}" type="text" name="email" th:field="*{email}" placeholder="이메일">
                 </div>
 
                 <div class="base-signup-wrap">

@@ -18,8 +18,8 @@
             <p class="social-login-title">다른 계정으로 로그인</p>
 
             <div class="social-login-container">
-                <img style="cursor: pointer;" src="frontend/png/google.png" alt=""  onclick="">
-                <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="">
+                <img style="cursor: pointer;" src="frontend/png/google.png" alt=""  onclick="location.href='/oauth2/authorization/google'">
+                <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="location.href='/oauth2/authorization/naver'">
             </div>
             
             <form class="login-form" method="post" action='' th:object = "${loginUserDto}">
@@ -33,13 +33,11 @@
                     <p>PW</p>
                     <input type="password" name="password" class="account" th:field="*{password}" placeholder="비밀번호 입력">
                 </div>
-                <!--
-                <input type="hidden" name="remember_session" value="1">
-                -->
+                <p style="color:red;" th:if="${noData}" th:text="|회원이 아닙니다. 회원가입을 해주세요.|"></p>
+                <p style="color:red;" th:if="${wrongPassword}" th:text="|아이디와 비밀번호를 확인해주세요.|"></p>
                 <button class="login" type="submit" onclick="">로그인</button>
-
             </form>
-
+            <div class="btn_container"> <button class="register_btn" onclick="location.href='/join'">회원가입</button></div>
 
         </div>
     </main>
