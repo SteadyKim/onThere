@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,11 +33,12 @@ public class UserController {
     }
 
     @PostMapping("/logins")
-    public String login(@ModelAttribute LoginUserDto loginUserDto) {
+    public String login(@ModelAttribute LoginUserDto loginUserDto, Model model) {
         Users foundUser = userService.findByUserId(loginUserDto.getUserId());
         // 회원 가입이 되지 않은 경우
         if(foundUser == null) {
             System.out.println("회원이 없습니다. 로그인 실패");
+            model.addAttribute("noData", "error");
             return "frontend/logins";
         }
 
@@ -45,8 +47,7 @@ public class UserController {
         // 비밀번호가 다른 경우
         String encodedPassword = foundUser.getPassword();
         if(!(encoder.matches(loginUserDto.getPassword(), encodedPassword))) {
-            //TODO @VALID 옵션 적용하기
-            System.out.println("비밀번호가 다릅니다.");
+            model.addAttribute("wrongPassword", "error");
             return "frontend/logins";
         }
 
@@ -70,12 +71,20 @@ public class UserController {
     }
 
     @PostMapping("/join")
-    public String join(@ModelAttribute CreateUserDto userDto) {
+    public String join(@ModelAttribute CreateUserDto userDto, HttpServletRequest request) {
 
         Users user = userDto.toEntity();
-        httpSession.setAttribute("user", user);
 
+
+        String oauth = (String) request.getSession().getAttribute("oauth");
+        //sns 로그인인지 체크하기
+        if(!(oauth == null)) {
+            user.setOauth(oauth);
+        }
+
+        httpSession.setAttribute("user", user);
         userService.join(user);
+
         return "redirect:/";
     }
 }

@@ -1,6 +1,7 @@
 package kau.software.config.auth;
 
 import kau.software.config.auth.dto.OAuthAttributes;
+import kau.software.domain.user.Role;
 import kau.software.domain.user.UserRepository;
 import kau.software.domain.user.Users;
 import kau.software.service.UserService;
@@ -16,12 +17,13 @@ import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 @RequiredArgsConstructor
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
     private final UserRepository userRepository;
-    private final HttpSession httpSession;
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -35,24 +37,37 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
-        Users user = saveOrUpdate(attributes);
+        Map<String, Object> newAttributes = makeNewAttributes(oAuth2User, registrationId);
 
-        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),attributes.getAttributes(),
-                        attributes.getNameAttributeKey());
 
+//        Users user = saveOrUpdate(attributes);
+
+        return new DefaultOAuth2User(Collections.singleton(new SimpleGrantedAuthority(Role.USER.toString())),
+                newAttributes,
+                attributes.getNameAttributeKey());
     }
+    private Map<String, Object> makeNewAttributes(OAuth2User oAuth2User, String registrationId) {
+        Map<String, Object> newAttributes = new HashMap<>();
+        Map<String, Object> oAuthAttributes = oAuth2User.getAttributes();
 
+        if(registrationId.equals("naver")) {
+            Map<String, Object> response = (Map<String, Object>)oAuthAttributes.get("response");
+            for (String s : response.keySet()) {
+                newAttributes.put(s, response.get(s));
+            }
+        }
+        else{
+            for (String s : oAuthAttributes.keySet()) {
+                newAttributes.put(s, oAuthAttributes.get(s));
+            }
+        }
+        newAttributes.put("oauth", "oauth");
+        return newAttributes;
+    }
     private Users saveOrUpdate(OAuthAttributes attributes) {
-
         Users user = userRepository.findByEmail(attributes.getEmail())
                 .map(entity -> entity.update(attributes.getName()))
                 .orElse(attributes.toEntity());
-
-        userRepository.save(user);
-        /**
-         * 세션 저장
-        */
-        httpSession.setAttribute("user", user);
 
         return user;
     }

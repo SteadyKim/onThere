@@ -11,19 +11,18 @@ import java.util.Map;
 public class OAuthAttributes {
     private Map<String, Object> attributes;
     private String nameAttributeKey;
+
     private String email;
     private String name;
-    private String oauth;
 
     @Builder
     public OAuthAttributes(Map<String, Object> attributes,
-                           String nameAttributeKey, String email, String name, String oauth) {
+                           String nameAttributeKey, String email, String name) {
 
         this.attributes = attributes;
         this.email = email;
         this.nameAttributeKey = nameAttributeKey;
         this.name = name;
-        this.oauth = oauth;
     }
 
     public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes){
@@ -39,7 +38,6 @@ public class OAuthAttributes {
         OAuthAttributes oAuthAttributes = OAuthAttributes.builder()
                 .email((String) response.get("email"))
                 .name((String) response.get("name"))
-                .oauth("oauth")
                 .attributes(response)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
@@ -53,7 +51,6 @@ public class OAuthAttributes {
                 .email((String)attributes.get("email"))
                 .name((String) attributes.get("name"))
                 .attributes(attributes)
-                .oauth("oauth")
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
@@ -62,7 +59,6 @@ public class OAuthAttributes {
         return Users.builder()
                 .email(email)
                 .name(name)
-                .oauth(oauth)
                 .role(Role.GUEST)
                 .build();
     }
