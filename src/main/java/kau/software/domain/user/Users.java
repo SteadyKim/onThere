@@ -1,11 +1,14 @@
 package kau.software.domain.user;
 
+import kau.software.domain.Record;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter
 @Entity
@@ -19,9 +22,10 @@ public class Users {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
-    @Column(name = "USER_ID")
+    @Column(name = "id")
     private String userId;
 
     @Column
@@ -35,6 +39,9 @@ public class Users {
 
     @Column
     private String oauth;
+
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
+    private List<Record> records = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -61,5 +68,11 @@ public class Users {
         return this.role.getKey();
     }
 
-
+    /**
+     * 연관관계 편의 메서드
+     */
+    public void addRecord(Record record) {
+        record.setUsers(this);
+        records.add(record);
+    }
 }
