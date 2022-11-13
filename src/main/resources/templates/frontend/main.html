@@ -18,7 +18,7 @@
             <a th:if="${session.user}" href="/logout">Logout</a>
             <a th:unless="${session.user}" href="/logins">Login</a>
             <a th:unless="${session.user}" href="/join">Join</a>
-            <a th:if="${session.user}" href="s">Mypage</a>
+            <a th:if="${session.user}" href="/mypage">Mypage</a>
         </div>
     </nav>
 
