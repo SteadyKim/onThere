@@ -1,6 +1,6 @@
-package kau.software.domain;
+package kau.software.domain.record;
 
-import kau.software.domain.user.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import kau.software.domain.user.Users;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,6 +29,7 @@ public class Record {
     private LocalDate endDate;
 
     @ManyToOne(fetch = LAZY)
+    @JsonIgnore
     @JoinColumn(name = "user_id")
     private Users users;
 

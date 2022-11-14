@@ -1,10 +1,11 @@
 package kau.software.domain.user;
 
-import kau.software.domain.Record;
+import kau.software.domain.record.Record;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;

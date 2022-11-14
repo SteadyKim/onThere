@@ -1,6 +1,6 @@
 package kau.software;
 
-import kau.software.domain.Record;
+import kau.software.domain.record.Record;
 import kau.software.domain.user.Role;
 import kau.software.domain.user.Users;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +17,6 @@ import java.time.LocalDate;
 public class InitDb {
 
     private final InitService initService;
-
     @PostConstruct
     public void init() {
         initService.dbInit();
@@ -64,6 +63,7 @@ public class InitDb {
             users.addRecord(record3);
 
             em.persist(users);
+
         }
     }
 }
