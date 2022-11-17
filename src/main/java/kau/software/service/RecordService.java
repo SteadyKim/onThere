@@ -8,7 +8,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,5 +25,13 @@ public class RecordService {
         List<Record> records = user.get().getRecords();
 
         return records;
+    }
+
+    @Transactional
+    public void deleteRecordById(Long id) {
+        Optional<Record> foundRecord = recordRepository.findById(id);
+        if(foundRecord.isPresent()) {
+            recordRepository.delete(foundRecord.get());
+        }
     }
 }
