@@ -18,6 +18,4 @@ const onCLickHandler = async () => {
         .catch((err) => console.log(err))
 }
 
-
-
 document.getElementById('btn').addEventListener("click",onCLickHandler)

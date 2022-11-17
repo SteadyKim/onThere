@@ -93,9 +93,4 @@ public class UserController {
 
         return "frontend/mypage";
     }
-
-    @GetMapping("/ex")
-    public String ex() {
-        return "frontend/ex";
-    }
 }
