@@ -1,9 +1,11 @@
 package kau.software.web.controller;
 
+import kau.software.domain.record.Record;
 import kau.software.domain.user.Users;
 import kau.software.service.UserService;
 import kau.software.web.dto.CreateUserDto;
 import kau.software.web.dto.LoginUserDto;
+import kau.software.web.dto.RecordDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -89,7 +93,19 @@ public class UserController {
     }
 
     @GetMapping("/mypage")
-    public String myPage() {
+    public String myPage(Model model) {
+        Users user = (Users) httpSession.getAttribute("user");
+        Long userId = user.getId();
+
+        Users foundUser = userService.findById(userId);
+        List<Record> recordList = foundUser.getRecords();
+
+        List<RecordDto> recordDtoList = new ArrayList<>();
+        for (Record record : recordList) {
+            recordDtoList.add(new RecordDto(record.getId(), record.getLocation(), record.getStartDate(), record.getEndDate()));
+        }
+
+        model.addAttribute("records", recordDtoList);
 
         return "frontend/mypage";
     }

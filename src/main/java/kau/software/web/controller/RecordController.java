@@ -39,7 +39,7 @@ public class RecordController {
         return recordDtoList;
     }
 
-    @GetMapping("/record/{id}")
+    @DeleteMapping("/record/{id}")
     @ResponseStatus(code = HttpStatus.OK)
     public String deleteRecordApi(@PathVariable("id") Long id) {
         recordService.deleteRecordById(id);

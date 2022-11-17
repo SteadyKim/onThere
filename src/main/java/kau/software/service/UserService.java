@@ -27,4 +27,8 @@ public class UserService {
         Optional<Users> foundUser = userRepository.findByUserId(userId);
         return foundUser.orElse(null);
     }
+
+    public Users findById(Long id) {
+        return userRepository.findById(id).get();
+    }
 }
