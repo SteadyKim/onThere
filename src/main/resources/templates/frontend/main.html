@@ -5,12 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="frontend/css/main.css" type="text/css">
+    <!-- 제이쿼리를 써야하므로 html 헤드 영역에 아래와 같은 소스를 삽입하겠습니다. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- <script type=""src="main.js"></script> -->
+
     <title>Main</title>
 </head>
 
 <body>
-
     <nav class="nav-wrap">
         <p class="logo">OnThere</p>
         <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
@@ -34,46 +36,22 @@
                 <div class="check-box">
                     <p>여행지</p>
                     <form>
-                        <select id="fruit" name="fruit">
+                        <select id="location" name="location">
                             <option value="">여행지 선택</option>
-                            <option value="seoul">서울</option>
+                            <option value="seoul" >서울</option>
                             <option value="ansan">안산</option>
                             <option value="jeonju">전주</option>
                             <option value="gapyeong">가평</option>
                             <option value="busan">부산</option>
                             <option value="yeosu">여수</option>
                         </select>
-
-                        <!-- <select>
-                            <option value="none">=== 선택 ===</option>
-                            <option value="seoul">서울</option>
-                            <option value="ansan">안산</option>
-                            <option value="jeonju">전주</option>
-                            <option value="gapyeong">가평</option>
-                            <option value="busan">부산</option>
-                            <option value="yeosu">여수</option>
-                        </select> -->
                     </form>
                 </div>
 
                 <div class="check-box">
                     <p>가는날</p>
-                    <input type="date"
-                        id="date"
-                        value="2022-11-20">
-                </div>
-                <!-- <div class="check-box">
-                    <p>가는날</p>
-                    <input type="date"
-                        class="date"
-                        id="datepicker"
-                        value="2022-11-15">
-                </div> -->
-
-                <div class="check-box">
-                    <p>오는날</p>
                     <input
-                        id="datepicker"
+                        id="startdate"
                         type="date"
                         data-placeholder="날짜 선택"
                         required
@@ -82,8 +60,25 @@
                         className={styles.selectDay}
                         onChange={StartDateValueHandler}
                         ></input>
-
                 </div>
+
+                <div class="check-box">
+                    <p>오는날</p>
+                    <input
+                        id="enddate"
+                        type="date"
+                        data-placeholder="날짜 선택"
+                        required
+                        aria-required="true"
+                        value={startDateValue}
+                        className={styles.selectDay}
+                        onChange={StartDateValueHandler}
+                        ></input>
+                </div>
+            </div>
+            <div class="search-box">
+                <button class="search-btn" type="button" onclick="">검색</button>
+                <img class="search-img" src="search.png" alt="">
             </div>
         </div>
     </div>
