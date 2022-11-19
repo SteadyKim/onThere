@@ -4,6 +4,9 @@ plugins {
 	id 'java'
 }
 
+jar {
+	enabled = false
+}
 group = 'kau'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
