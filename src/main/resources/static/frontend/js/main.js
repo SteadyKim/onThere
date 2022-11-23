@@ -1,76 +1,77 @@
-var picker = new Pikaday({ 
-  field: document.getElementById('startdate'),
-  format: 'yyyy-MM-dd',
-  toString(date, format) {
-    let day = ("0" + date.getDate()).slice(-2);
-    let month = ("0" + (date.getMonth() + 1)).slice(-2);
-    let year = date.getFullYear();
-    return `${year}-${month}-${day}`;
-  }
-});
-
-var picker = new Pikaday({ 
-  field: document.getElementById('enddate'),
-  format: 'yyyy-MM-dd',
-  toString(date, format) {
-    let day = ("0" + date.getDate()).slice(-2);
-    let month = ("0" + (date.getMonth() + 1)).slice(-2);
-    let year = date.getFullYear();
-    return `${year}-${month}-${day}`;
-  }
-});
 
 
-function reqAjax2() {
-  var location = $("#location").val();
-  var startdate = $("#startdate").val();
-  var enddate = $("#enddate").val();
+function getShow(){
+            
+  document.getElementById("b").style.display = "";
+  document.getElementById("a").style.display = "none";
 
-  // json 형식으로 바꿀 수 있음 (key)
-  var sendData = [{"location": location}, {"startdate" : startdate}, {"enddate" : enddate}]
-  $.ajax({
-      url:''
-      , method : 'POST'
-      , data: sendData
-      , success :function(){} //데이터 받아오기 성공 후 실행할 함수들 연결예정
-  })	
+};
+
+function getJSON() {
+
+//가는날
+var date =new Date($("#startdate").val());
+console.log(date); //날짜형식
+var g = $("#startdate").val() //문자형식 2022-10-23 split 1+2
+console.log(g);
+
+h = g.split("-");
+var monthday = (h[1]+"-"+h[2]);
+console.log(monthday);
+
+a = String(date.getFullYear()-1); //2021
+
+console.log(a);
+
+
+var lastdate = a+"-"+monthday;
+console.log(lastdate);
+
+//location
+//var code = $("#location").val();
+var value_str = document.getElementById('select_value');
+test = value_str.options[value_str.selectedIndex].value;
+
+
+
+$.ajax({
+type:"get",
+url:"https://yhqcfpgwhd.execute-api.ap-northeast-2.amazonaws.com/result/temp",
+data: {"temp_date_str": lastdate, "temp_region_code": test, "visit_date_str":"20210101", "visit_region_code":"11110"},
+//data: {"a":'2022-06-15', "b":102},
+dataType:"json",
+success: function(data){
+    console.log("통신성공");
+    console.log(data);
+    console.log(typeof(data));
+
+    
+    
+    var num = data;
+    document.getElementById("lasttemp").innerHTML = num[3];
+    document.getElementById("lastyeardate").innerHTML = lastdate;
+
+    //document.getElementById("second").innerHTML = num.temp_region_code;
+    //예상관광객 수 보여주기
+    //document.getElementById("관광객 수 들어갈 태그의 아이디").innerHTML = num.(예상관광객 수 들어오는 칸);
+    
+
+    // for (i in num) {
+        
+
+    //     // document.getElementById("first").innerHTML = num[i];
+    //     // document.getElementById("second").innerHTML = num[i];
+  //     //console.log(obj[variable]);
+    //     document.getElementById("first").innerHTML = num.a;
+    //     document.getElementById("second").innerHTML = num.b;
+    // }
+    
+    
+    
+},
+error:function(){
+    console.log("통신에러");
 }
-
-
-
-
-// $(document).ready(function(){
-//   $.ajax({
-//     type: 'get',   //get방식으로 명시
-//     url : '',  //이동할 파일 주소
-//     dataType:'text',   //문자형식으로 받기
-//     success: function(data){   //데이터 주고받기 성공했을 경우 실행할 결과
-//             //function(data)를 쓰게 되면 전달받은 데이터가 data안에 담아서 들어오게 된다. 
-//       alert(data);   
-//     },
-//     error:function(){   //데이터 주고받기가 실패했을 경우 실행할 결과
-//       alert('실패');
-//     }
-//   })
-// });
-
-
-
-// function getJSON() {
-//   $.ajax({
-//   type:"get",
-//   url:"https://qnzs6li797.execute-api.ap-northeast-2.amazonaws.com/2022-11-18/test",
-//   data: {"id":1},
-//   dataType:"json",
-//   success: function(data){
-//       console.log("통신성공");
-//       console.log(data);
-     
-      
-//   },
-//   error:function(){
-//       console.log("통신에러");
-//   }
-// })
-// }
+})
+}
 

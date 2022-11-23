@@ -5,82 +5,204 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="frontend/css/main.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <!-- 제이쿼리를 써야하므로 html 헤드 영역에 아래와 같은 소스를 삽입하겠습니다. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <script type=""src="main.js"></script> -->
+    <script type=""src="frontend/js/main.js"></script>
 
     <title>Main</title>
 </head>
 
 <body>
-    <nav class="nav-wrap">
-        <p class="logo">OnThere</p>
-        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
-        <div  class="nav-container">
-            <a th:if="${session.user}" href="/logout">Logout</a>
-            <a th:unless="${session.user}" href="/logins">Login</a>
-            <a th:unless="${session.user}" href="/join">Join</a>
-            <a th:if="${session.user}" href="/mypage">Mypage</a>
-        </div>
-    </nav>
-
-    <div class="main-box">
-        <p class="where-text">어디로 가시나요?</p>
-
-        <div class="in-wrap">
-
-            <div class="line"></div>
-
-            <div class="check-box-wrap">
-
-                <div class="check-box">
-                    <p>여행지</p>
-                    <form>
-                        <select id="location" name="location">
-                            <option value="">여행지 선택</option>
-                            <option value="seoul" >서울</option>
-                            <option value="ansan">안산</option>
-                            <option value="jeonju">전주</option>
-                            <option value="gapyeong">가평</option>
-                            <option value="busan">부산</option>
-                            <option value="yeosu">여수</option>
-                        </select>
-                    </form>
-                </div>
-
-                <div class="check-box">
-                    <p>가는날</p>
-                    <input
-                        id="startdate"
-                        type="date"
-                        data-placeholder="날짜 선택"
-                        required
-                        aria-required="true"
-                        value={startDateValue}
-                        className={styles.selectDay}
-                        onChange={StartDateValueHandler}
-                        ></input>
-                </div>
-
-                <div class="check-box">
-                    <p>오는날</p>
-                    <input
-                        id="enddate"
-                        type="date"
-                        data-placeholder="날짜 선택"
-                        required
-                        aria-required="true"
-                        value={startDateValue}
-                        className={styles.selectDay}
-                        onChange={StartDateValueHandler}
-                        ></input>
-                </div>
+    <div class="main" id ="a">
+        <nav class="nav-wrap">
+            <p class="logo">OnThere</p>
+            <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+            <div  class="nav-container">
+                <a th:if="${session.user}" href="/logout">Logout</a>
+                <a th:unless="${session.user}" href="/logins">Login</a>
+                <a th:unless="${session.user}" href="/join">Join</a>
+                <a th:if="${session.user}" href="/mypage">Mypage</a>
             </div>
-            <div class="search-box">
-                <button class="search-btn" type="button" onclick="">검색</button>
-                <img class="search-img" src="search.png" alt="">
+        </nav>
+
+        <div class="main-box">
+            <p class="where-text">어디로 가시나요?</p>
+
+            <div class="in-wrap">
+
+                <div class="line"></div>
+
+                <div class="check-box-wrap">
+
+                    <div class="check-box">
+                        <p>여행지</p>
+                        <form>
+                            <select id="select_value">
+                                <option value="">여행지 선택</option>
+                                <option value="108">서울</option>
+                                <option value="ansan">안산</option>
+                                <option value="jeonju">전주</option>
+                                <option value="gapyeong">가평</option>
+                                <option value="busan">부산</option>
+                                <option value="yeosu">여수</option>
+                            </select>
+                        </form>
+                    </div>
+
+                    <div class="check-box">
+                        <p>가는날</p>
+                        <input
+                            class="date"
+                            id="startdate"
+                            type="date"
+                            data-placeholder="날짜 선택"
+                            required
+                            aria-required="true"
+                            className={styles.selectDay}
+                            ></input>
+                    </div>
+
+                    <div class="check-box">
+                        <p>오는날</p>
+                        <input
+                            class="date"
+                            id="datepicker"
+                            type="date"
+                            data-placeholder="날짜 선택"
+                            required
+                            aria-required="true"
+                            className={styles.selectDay}                         
+                            ></input>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input class="search-btn" type ="button" onclick="getShow();getJSON();" value="검색"> 
+                    <img class="search-img" src="frontend/png/search.png" alt="">
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="result" id="b" style="display: none;">
+        <nav class="nav-wrap">
+            <!-- <p class="logo">OnThere</p> -->
+            <a href="main.html" class="logo">OnThere</a>
+
+            <div class="nav-container">
+                <a href="">Login</a>
+                <a href="">Join</a>
+                <a href="">Mypage</a>
+            </div>
+        </nav>
+        <div class="clear-box">
+            <p class="date">2022 . 11 . 24 - 2022 . 11 . 28</p>
+            <section>
+                <img id="image" src="frontend/png/location.png" >
+                <p class="place">부산</p>
+            </section>
+            
+        </div>
+        <div class="container">
+            <div class="search-result">
+                <div>
+                    <p class="search-content-1">여행지</p>
+                    <p class="result-content-1">부산</p>
+                </div>
+                <div>
+                    <p class="search-content-2">가는날</p>
+                    <p class="result-content-2">2022 . 11 . 24</p>
+                </div>
+                <div>
+                    <p class="search-content-3">오는날</p>
+                    <p class="result-content-3">2022 . 11 . 28</p>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="info">
+            <div class="weather">
+                <p class="info-txt">날씨</p>
+                <div class="last-year-card">
+                    <div class="weather-info">
+                        <p class="temp" id="lasttemp">4º</p>
+                        <p class="last-date" id="lastyeardate">2021/11/24</p>
+                    </div>
+                    <img id="image" src="frontend/png/weather.png" >
+                </div>
+                <br>
+                <div class="this-year-card">
+                    <p>&nbsp;SORRY ...</p>
+                    <img id="image" src="frontend/png/crying-face.png" >
+                </div>
+                <p class="weather-notice">* 올해 날씨는 11월14일부터 확인가능합니다.</p>
+            </div>
+            <div class="graph">
+                <p class="info-txt">관광객 수</p>
+                <canvas class="graph-container" id="myChart" width="300" height="250"></canvas>
+                <!--<button id="sendAjax">button</button> -->
+                
+
+            </div>
+            <div class="tourist-count">
+                <p class="a">2022/11/24</p>
+                <p class="b">예상 관광객 수</p>
+                <p class="c">23,458 명</p>
+                <p class="d">여행하기</p>
+                <div class="complexity">
+                    <p class="e">복잡</p> 
+                    <p class="f">한 날이에요</p> 
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="ranking">
+            <div class="ranking-txt">
+                <p class="area">부산</p>
+                <p class="area-ment">TOP3 관광지</p>
+            </div>
+            <div class="tour-place">
+                
+                <div class="wrap">
+                    <div class="wrapimage">
+                        <img id="placeimage" src="frontend/png/Group 421.png" >
+                    </div>
+                    <div class="imagetext">
+                        <p class="place-name">관광지이름</p>
+                        <p class="place-address">관광지주소</p>
+                    </div>
+
+                </div>
+                <div class="wrap">
+                    <div class="wrapimage">
+                        <img id="placeimage" src="frontend/png/Group 421.png" >
+                    </div>
+                    <div class="imagetext">
+                        <p class="place-name">관광지이름</p>
+                        <p class="place-address">관광지주소</p>
+                    </div>
+
+                </div>
+                <div class="wrap">
+                    <div class="wrapimage">
+                        <img id="placeimage" src="frontend/png/Group 421.png" >
+                    </div>
+                    <div class="imagetext">
+                        <p class="place-name">관광지이름</p>
+                        <p class="place-address">관광지주소</p>
+                    </div>
+
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+    <script type="text/javascript" src="frontend/js/chart.js"></script>
+    
 </body>
 </html>
