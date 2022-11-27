@@ -1,10 +1,13 @@
 package kau.software.web.dto;
 
+import kau.software.domain.record.Record;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
 @Data
+@NoArgsConstructor
 public class RecordDto {
     private Long id;
 
@@ -19,5 +22,14 @@ public class RecordDto {
         this.location = location;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public Record toEntity() {
+        Record record = new Record();
+
+        record.setLocation(location);
+        record.setStartDate(startDate);
+        record.setEndDate(endDate);
+        return record;
     }
 }

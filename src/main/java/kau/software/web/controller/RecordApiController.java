@@ -4,6 +4,7 @@ package kau.software.web.controller;
 import kau.software.domain.record.Record;
 import kau.software.domain.user.Users;
 import kau.software.service.RecordService;
+import kau.software.service.UserService;
 import kau.software.web.dto.RecordDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +23,7 @@ public class RecordApiController {
 
     private final HttpSession httpSession;
     private final RecordService recordService;
+    private final UserService userService;
 
     @GetMapping("/record")
     public List<RecordDto> findRecordApi() {
@@ -36,6 +38,13 @@ public class RecordApiController {
         }
 
         return recordDtoList;
+    }
+    @PostMapping("/record")
+    public void addRecordApi(@RequestBody RecordDto recordDto) {
+        Users user = (Users) httpSession.getAttribute("user");
+        Users foundUser = userService.findById(1L);
+
+        userService.updateRecord(foundUser, recordDto.toEntity());
     }
 
     @DeleteMapping("/record/{id}")

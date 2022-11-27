@@ -87,7 +87,7 @@ html, body {
 .main {
     height: 100vh;
     width: 100vw;
-    background-image: url('main.png');
+    background-image: url('../png/main.png');
     background-size: cover;
     align-items: center;
     text-align: center;
@@ -339,7 +339,7 @@ select:disabled {
 /* -----------------------결과페이지---------------------------*/
 
 .result {
-    background-image: url('resultback.png');
+    background-image: url('../png/resultback.png');
     background-position: left top;
     background-repeat: no-repeat;
     background-size: 1920px 350px;
