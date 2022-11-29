@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus</title>
+    <link rel="stylesheet" href="frontend/css/bonus.css" type="text/css">
+    <script type="" src="frontend/js/bonus.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <nav class="nav-wrap">
+        <p class="logo">OnThere</p>
+        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+        <div  class="nav-container">
+            <a th:if="${session.user}" href="/logout">Logout</a>
+            <a th:unless="${session.user}" href="/logins">Login</a>
+            <a th:unless="${session.user}" href="/join">Join</a>
+            <a th:if="${session.user}" href="/mypage">Mypage</a>
+        </div>
+    </nav>
+
+    <header>
+        <div class="tour-place-container" id="select-place">
+            <button class="tour-place-name" value="1" onclick="getJSON();">서울</button>
+            <button class="tour-place-name" value="2" onclick="getJSON();">전주</button>
+            <button class="tour-place-name" value="3" onclick="getJSON();">천안</button>
+            <button class="tour-place-name" value="4" onclick="getJSON();">부산</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="test" class="test">
+        </div>
+    </main>
+    
+
+    <script type="text/javascript">
+        var value_str = document.getElementById('select-place');
+        
+        function getJSON() {
+
+            const div = document.getElementById('test');
+
+            $(".recommend-card").detach();
+            
+            $.ajax({
+                type:"get", //get방식으로 가져오기
+                url:"frontend/json/data.json",
+                // data: {"":},
+                dataType:"json",
+                success: function(data){ //요청 성공시 실행될 메서드
+                    console.log("통신성공");
+                    console.log(data);
+                    console.log(typeof(data));
+
+                    var responseData = data;
+                    var responseDataLen = responseData.length;
+                    var html = "";
+
+                    for (var i = 0; i < responseDataLen; i++){
+                        html += 
+                        `<section class="recommend-card">` +
+                        `<div class="section-box"> <img class="tour-card-img" src="frontend/png/seoul1.jpg" alt="">
+                         <div class="tour-card-name">` + data[i].no +`</div>`
+                         + `<div class="tour-card-address">` + data[i].name + `</div> </div> </section>` ;
+                    }
+
+            
+                    $('#test').append(html);
+                },
+                error:function(){  //요청 실패시 에러 확인을 위함
+                    console.log("통신에러");
+                }
+            })
+        }
+
+
+        </script>
+</body>
