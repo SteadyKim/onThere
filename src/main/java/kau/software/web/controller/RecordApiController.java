@@ -29,7 +29,7 @@ public class RecordApiController {
     public List<RecordDto> findRecordApi() {
         Users user = (Users) httpSession.getAttribute("user");
         //TODO 1은 userId로 변경할 것.
-        List<Record> records = recordService.findRecordsById(1L);
+        List<Record> records = recordService.findRecordsById(user.getId());
 
         List<RecordDto> recordDtoList = new ArrayList<>();
         for (Record record : records) {
@@ -42,7 +42,7 @@ public class RecordApiController {
     @PostMapping("/record")
     public void addRecordApi(@RequestBody RecordDto recordDto) {
         Users user = (Users) httpSession.getAttribute("user");
-        Users foundUser = userService.findById(1L);
+        Users foundUser = userService.findById(user.getId());
 
         userService.updateRecord(foundUser, recordDto.toEntity());
     }

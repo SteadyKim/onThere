@@ -1,81 +1,145 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bonus</title>
-    <link rel="stylesheet" href="frontend/css/bonus.css" type="text/css">
-    <script type="" src="frontend/js/bonus.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" th:href="|frontend/css/bonus.css|" type="text/css">
 </head>
 <body>
     <nav class="nav-wrap">
-        <p class="logo">OnThere</p>
-        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+        <a href="/main" class="logo">OnThere</a>
+         <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
         <div  class="nav-container">
-            <a th:if="${session.user}" href="/logout">Logout</a>
-            <a th:unless="${session.user}" href="/logins">Login</a>
-            <a th:unless="${session.user}" href="/join">Join</a>
             <a th:if="${session.user}" href="/mypage">Mypage</a>
         </div>
     </nav>
 
     <header>
         <div class="tour-place-container" id="select-place">
-            <button class="tour-place-name" value="1" onclick="getJSON();">서울</button>
-            <button class="tour-place-name" value="2" onclick="getJSON();">전주</button>
-            <button class="tour-place-name" value="3" onclick="getJSON();">천안</button>
-            <button class="tour-place-name" value="4" onclick="getJSON();">부산</button>
+            <button class="tour-place-name" value="seoul" onclick="location.href='seoul'">서울</button>
+            <button class="tour-place-name" value="jeonju" onclick="location.href='jeonju'">전주</button>
+            <button class="tour-place-name" value="cheonan" onclick="location.href='cheonan'">천안</button>
+            <button class="tour-place-name" value="busan" onclick="location.href='busan'">부산</button>
         </div>
     </header>
 
     <main>
-        <div id="test" class="test">
+
+        <div th:if="${travelDtoArrayList}" class="tour-card-box">
+            <section th:each="travelDto: ${travelDtoArrayList}">
+                <img class="tour-card-img" th:src="@{${travelDto.url}}" alt="">
+                <div class="tour-card-name">
+                    <p th:text="${travelDto.name}" th:align="center"> travel name</p>
+                </div>
+
+                <div class="tour-card-info-box">
+                    <div class="tour-card-address">
+                        <p th:text="${travelDto.location}"> travel location</p>
+                    </div>
+                </div>
+            </section>
+
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul2.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul3.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            -->
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul4.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+<!--            -->
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul5.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul6.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul7.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+
+<!--            <section>-->
+<!--                <img class="tour-card-img" src="frontend/png/seoul8.jpg" alt="">-->
+
+<!--                <div class="tour-card-name">-->
+<!--                    <p>[투어/라스베가스] 시닉 항공 스트립 헬기 야경 투어 (트랜스퍼 포함)</p>-->
+<!--                </div>-->
+
+<!--                <div class="tour-card-info-box">-->
+<!--                    <div class="tour-card-address">-->
+<!--                        <p> 5060 Koval Lane, Las Vegas, NV 89119</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
+
         </div>
     </main>
-    
-
-    <script type="text/javascript">
-        var value_str = document.getElementById('select-place');
-        
-        function getJSON() {
-
-            const div = document.getElementById('test');
-
-            $(".recommend-card").detach();
-            
-            $.ajax({
-                type:"get", //get방식으로 가져오기
-                url:"frontend/json/data.json",
-                // data: {"":},
-                dataType:"json",
-                success: function(data){ //요청 성공시 실행될 메서드
-                    console.log("통신성공");
-                    console.log(data);
-                    console.log(typeof(data));
-
-                    var responseData = data;
-                    var responseDataLen = responseData.length;
-                    var html = "";
-
-                    for (var i = 0; i < responseDataLen; i++){
-                        html += 
-                        `<section class="recommend-card">` +
-                        `<div class="section-box"> <img class="tour-card-img" src="frontend/png/seoul1.jpg" alt="">
-                         <div class="tour-card-name">` + data[i].no +`</div>`
-                         + `<div class="tour-card-address">` + data[i].name + `</div> </div> </section>` ;
-                    }
-
-            
-                    $('#test').append(html);
-                },
-                error:function(){  //요청 실패시 에러 확인을 위함
-                    console.log("통신에러");
-                }
-            })
-        }
-
-
-        </script>
 </body>
