@@ -8,6 +8,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0;
+
 }
 
 /* fonts */
@@ -235,7 +236,7 @@ select {
 select:hover {
     border-color: #888;
   }
-  
+
 select:focus {
     border-color: #aaa;
     box-shadow: 0 0 1px 3px #aaa;
@@ -243,7 +244,7 @@ select:focus {
     color: #222;
     outline: none;
   }
-  
+
 select:disabled {
     opacity: 0.5;
   }
@@ -252,12 +253,12 @@ select:disabled {
     color: rgba(0, 0, 0, 0);
     opacity: 1;
     display: block;
-    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat; 
+    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
     width: 20px;
     height: 20px;
     border-width: thin;
  } */
- 
+
  .date {
     font-family: "Noto Sansf KR", sans-serif;
   font-size: 1rem;
@@ -301,7 +302,6 @@ select:disabled {
     color: rgba(0, 0, 0, 0);
     opacity: 1;
     display: block;
-    /* background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) center/80% no-repeat white;;  */
     width: 20px;
     height: 20px;
     border-width: thin;
@@ -327,6 +327,7 @@ select:disabled {
     border:none;
     text-decoration: none;
     margin-top: 2px;
+    background-color: transparent;
 }
 
 .search-img {
@@ -345,30 +346,32 @@ select:disabled {
     background-size: 1920px 350px;
     height: 100vh;
     width: 100vw;
+    min-width: 1300px;
 }
 
 .container {
-   width: 1100px;
-   margin-top: 150px;
-   padding-top: 0;
+    width: auto;
+    margin-top: 130px;
+    padding-top: 0;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 0;
-   background: #fff;
+    background: #fff;
     height: 70px;
 
 }
 
 .search-result {
-   display: flex;
-    justify-content: space-between;
-   align-items: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     padding: 25px 10px;
-    height: 30px;
+    height: 20px;
     box-sizing: border-box;
     text-align:left;
     width: 600px;
-    
+    margin-left: 10%;
+
 }
 
 .search-content-1, .search-content-2, .search-content-3 {
@@ -378,36 +381,39 @@ select:disabled {
 }
 
 .result-content-1, .result-content-2, .result-content-3{
-    
-    line-height: 1.5;
+
+    line-height: 1.8;
     color: #444;
     background-color: #fff;
-    width: 160px;
-    padding: 0;
+    width: 180px;
+    height: 25px;
     margin: 0;
-    padding-left: 10px;
-    border: 1.5px solid #c8c8c8;
-    border-radius: 0.5em;
-    box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    padding: 1px 30px;
+    border: 2px solid #c8c8c8;
+    border-radius: 20px;
     font-family: "Pretendard-regular";
     font-size: 14px;
     font-weight: bold;
-    
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+
 }
 
 .clear-box{
     display: block;
-    margin-LEFT: 1000PX;
+    margin-LEFT: 65%;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 280PX;
-    height: 100px;
+    width: 15vw;
+    min-width: 180px;
+    height: 12vh;
+    padding-top: 1.5%;
     background-color: #ffffff;
     background-color: rgba( 255, 255, 255, 0.3 );
     border-radius: 3%;
     margin-top: 100px;
     color:#fff;
+
 }
 
 
@@ -422,7 +428,7 @@ section{
     font-weight: 800;
     padding-right: 30px;
 }
- 
+
 .clear-box img{
     width: 50px;
 }
@@ -431,17 +437,17 @@ section{
     padding-top: 10px;
     font-size: 16px;
     font-family: 'Pretendard-regular';
-    
+
 }
 
 .info{
     width: 100%;
     display: flex;
-   padding-top: 0;
+    padding-top: 0;
     margin: 0 auto;
     height: 55%;
-    
-    background-color: #e8e8e8;
+    background-color: rgba(213, 213, 213, 0.24);
+    min-width: 1300px;
 }
 
 .weather{
@@ -450,7 +456,8 @@ section{
     justify-content: space-between;
     align-items: center;
     text-align: left;
-    width: 18%;
+    width: 240px;
+    min-width: 240px;
     height: 80%;
     background-color: #ffffff;
     border-radius: 3%;
@@ -466,6 +473,7 @@ section{
     font-weight: bold;
 }
 
+
 canvas{
     width: 320;
     height: 460;
@@ -477,6 +485,7 @@ canvas{
     align-items: center;
     text-align: left;
     width: 400Px;
+    min-width: 400px;
     height: 80%;
     background-color: #ffffff;
     border-radius: 3%;
@@ -492,6 +501,7 @@ canvas{
     align-items: center;
     text-align: left;
     width: 260Px;
+    min-width: 260px;
     height: 80%;
     background-color: #4c87da;
     border-radius: 3%;
@@ -511,16 +521,25 @@ canvas{
     border-radius: 3%;
     margin-top: 10px;
     color:white;
-    
+
 }
 
 .temp{
-    border-bottom:2px solid white; 
+    border-bottom:2px solid white;
     padding-bottom:1px;
     font-family: "Pretendard-regular";
     font-size: 32px;
     font-weight: bold;
-    
+
+}
+
+.temp2{
+    border-bottom:2px solid white;
+    padding-bottom:1px;
+    font-family: "Pretendard-regular";
+    font-size: 32px;
+    font-weight: bold;
+
 }
 
 .last-date{
@@ -532,17 +551,18 @@ canvas{
 .weather-info{
     display: block;
     padding-left: 10px;
-    
+
 }
 
-.weather-notice{ 
+.weather-notice{
     font-family: "Pretendard-regular";
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
-    color: #848484;
-    text-align: center;
+    color: #fff;
+    text-align: left;
 
 }
+/*
 .this-year-card{
     display: flex;
     margin: 0 auto;
@@ -558,122 +578,95 @@ canvas{
     font-family: "Pretendard-regular";
     font-size: 24px;
     font-weight: bold;
-    
+
+}*/
+
+.this-year-card{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    height: 25%;
+    background-color: #4c87da;
+    border-radius: 3%;
+    margin-top: 10px;
+    color:white;
+
 }
 
 .graph canvas{
-    
+
     margin-left: 10%;
     margin-top: 3%;
 }
 
 .complexity{
     display: flex;
+
 }
 
-.e{
+.tourist-date {
+    text-align: right;
     font-family: "Pretendard-regular";
     font-size: 24px;
     font-weight: bold;
-    
+    margin-right: 10%;
+    margin-top: 5%;
 }
 
-.sample img{
-    
-    margin-left: 15%;
-    width: 70%;
-    
-}
-
-
-.ranking{
-    width: auto;
-    display:block;
-   padding-top: 0;
-    padding-left:15%;
-    margin-top: 10%;
-    height: 50%;
-    align-items: center;
+.tour-txt1{
     text-align: center;
-    
-   
+    font-family: "Pretendard-regular";
+    font-size: 16px;
+    margin-right: 25%;
+    margin-top: 20%;
+
 }
-  
 
-.tour-place{
-
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.tour-count{
     text-align: center;
-}
-
-.wrapimage {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 1%;
-    
-    
-}
-
-.ranking-txt{
-    display: flex;
-}
-
-
-.area{
     font-family: "Pretendard-regular";
     font-size: 40px;
+
     font-weight: bold;
-    color: #4c87da;
-    margin-left: 1%;
-  
 }
 
-.area-ment{
+.tour-txt2{
+    text-align: center;
     font-family: "Pretendard-regular";
-    font-size: 28px;
+    font-size: 16px;
+    margin-right: 40%;
+    margin-top: 15%;
+
+}
+
+
+.complexity-txt{
+    font-family: "Pretendard-regular";
+    font-size: 36px;
     font-weight: bold;
-    color:black;
-    margin-top: 1%;
-    margin-left: 1%;
-}
 
-
-.wrap img {
-    width: 90%;
-    display: block;
-    margin: auto;
-}
-
-.wrap {
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
 }
 
 
 
-.place-name {
-    position: absolute;
-    top:15%;
-    left:15%;
-    width: 70%;
-    font-size: 28px;
+.complexity {
+    margin-left: 17%;
     font-family: "Pretendard-regular";
-    font-weight: bold;
-    text-align: left;
-    color: #fff;
 }
 
-.place-address {
-    position: absolute;
-    top: 30%;
-    left: 15%;
-    width: 70%;
-    font-size: 20px;
-    font-family: "Pretendard-regular";
-    text-align: left;
-    color: #fff;
+
+.tour-txt3{
+
+    padding-top: 10%;
+
 }
+
+
+
+
+
+
+

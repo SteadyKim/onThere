@@ -41,44 +41,36 @@
                         <form>
                             <select id="select_value">
                                 <option value="">여행지 선택</option>
-                                <option value="108">서울</option>
-                                <option value="ansan">안산</option>
+                                <option value="108" value2 = "서울" value3="11110">서울</option>
+                                <option value="108" value2 = "부산" value3="11110">부산</option>
                                 <option value="jeonju">전주</option>
                                 <option value="gapyeong">가평</option>
                                 <option value="busan">부산</option>
                                 <option value="yeosu">여수</option>
                             </select>
+
                         </form>
                     </div>
 
                     <div class="check-box">
                         <p>가는날</p>
                         <input
-                            class="date"
-                            id="startdate"
-                            type="date"
-                            data-placeholder="날짜 선택"
-                            required
-                            aria-required="true"
-                            className={styles.selectDay}
-                            ></input>
+                                class="date"
+                                id="startdate"
+                                type="date"
+                                data-placeholder="날짜 선택"
+                                required
+                                aria-required="true"
+                                className={styles.selectDay}
+                        ></input>
                     </div>
 
-                    <div class="check-box">
-                        <p>오는날</p>
-                        <input
-                            class="date"
-                            id="datepicker"
-                            type="date"
-                            data-placeholder="날짜 선택"
-                            required
-                            aria-required="true"
-                            className={styles.selectDay}                         
-                            ></input>
-                    </div>
+
+
                 </div>
+
                 <div class="search-box">
-                    <input class="search-btn" type ="button" onclick="getShow();" value="검색">
+                    <input class="search-btn" type ="button" onclick="getShow();getJSON();" value="검색">
                     <img class="search-img" src="frontend/png/search.png" alt="">
                 </div>
             </div>
@@ -88,7 +80,7 @@
     <div class="result" id="b" style="display: none;">
         <nav class="nav-wrap">
             <!-- <p class="logo">OnThere</p> -->
-            <a href="main.html" class="logo">OnThere</a>
+            <a href="" class="logo">OnThere</a>
 
             <div class="nav-container">
                 <a href="">Login</a>
@@ -97,30 +89,29 @@
             </div>
         </nav>
         <div class="clear-box">
-            <p class="date">2022 . 11 . 24 - 2022 . 11 . 28</p>
+            <!--<p class="date" id="cleardate">2022 . 11 . 24 ~ 2022 . 11 . 28</p>-->
             <section>
                 <img id="image" src="frontend/png/location.png" >
-                <p class="place">부산</p>
+                <p class="place" id="selectedlocal">부산</p>
             </section>
-            
+
         </div>
         <div class="container">
             <div class="search-result">
                 <div>
                     <p class="search-content-1">여행지</p>
-                    <p class="result-content-1">부산</p>
+                    <p class="result-content-1" id="selectedlocal2">부산</p>
                 </div>
                 <div>
-                    <p class="search-content-2">가는날</p>
-                    <p class="result-content-2">2022 . 11 . 24</p>
+                    <p class="search-content-2">날짜</p>
+                    <input type="date" class="result-content-2" id="dayselect">
                 </div>
-                <div>
-                    <p class="search-content-3">오는날</p>
-                    <p class="result-content-3">2022 . 11 . 28</p>
-                </div>
+
+                <input class="search-btn2" type ="button" onclick="getShow();getJSON2();" value="검색">
+
             </div>
-            
-            
+
+
         </div>
         <div class="info">
             <div class="weather">
@@ -130,79 +121,38 @@
                         <p class="temp" id="lasttemp">4º</p>
                         <p class="last-date" id="lastyeardate">2021/11/24</p>
                     </div>
-                    <img id="image" src="frontend/png/weather.png" >
+                    <!--<img id="image" src="weather.png" >-->
                 </div>
                 <br>
                 <div class="this-year-card">
-                    <p>&nbsp;SORRY ...</p>
-                    <img id="image" src="frontend/png/crying-face.png" >
+                    <div class="weather-info">
+                        <p class="temp2" id="thistemp">SORRY ...</p>
+                        <p class="weather-notice" id="this-date">* 기온 정보가 없습니다.</p>
+                        <!--<img id="image" src="crying-face.png" >-->
+                    </div>
                 </div>
-                <p class="weather-notice">* 올해 날씨는 11월14일부터 확인가능합니다.</p>
+
             </div>
-            <div class="graph">
+            <div class="graph" id="graphcontainer">
                 <p class="info-txt">관광객 수</p>
                 <canvas class="graph-container" id="myChart" width="300" height="250"></canvas>
                 <!--<button id="sendAjax">button</button> -->
-                
+
 
             </div>
             <div class="tourist-count">
-                <p class="a">2022/11/24</p>
-                <p class="b">예상 관광객 수</p>
-                <p class="c">23,458 명</p>
-                <p class="d">여행하기</p>
+                <p class="tourist-date" id="selectedday">2022/11/24</p>
+                <p class="tour-txt1">예상 관광객 수</p>
+                <p class="tour-count" id="tourcount">23,458 명</p>
+                <p class="tour-txt2">여행하기</p>
                 <div class="complexity">
-                    <p class="e">복잡</p> 
-                    <p class="f">한 날이에요</p> 
+                    <p class="complexity-txt" id="compltxt">복잡</p>
+                    <p class="tour-txt3">한 날이에요</p>
                 </div>
-            </div>
-
-
-
-        </div>
-        <div class="ranking">
-            <div class="ranking-txt">
-                <p class="area">부산</p>
-                <p class="area-ment">TOP3 관광지</p>
-            </div>
-            <div class="tour-place">
-                
-                <div class="wrap">
-                    <div class="wrapimage">
-                        <img id="placeimage" src="frontend/png/Group 421.png" >
-                    </div>
-                    <div class="imagetext">
-                        <p class="place-name">관광지이름</p>
-                        <p class="place-address">관광지주소</p>
-                    </div>
-
-                </div>
-                <div class="wrap">
-                    <div class="wrapimage">
-                        <img id="placeimage" src="frontend/png/Group 421.png" >
-                    </div>
-                    <div class="imagetext">
-                        <p class="place-name">관광지이름</p>
-                        <p class="place-address">관광지주소</p>
-                    </div>
-
-                </div>
-                <div class="wrap">
-                    <div class="wrapimage">
-                        <img id="placeimage" src="frontend/png/Group 421.png" >
-                    </div>
-                    <div class="imagetext">
-                        <p class="place-name">관광지이름</p>
-                        <p class="place-address">관광지주소</p>
-                    </div>
-
-                </div>
-                
             </div>
         </div>
-        
+
     </div>
-    <script type="text/javascript" src="frontend/js/chart.js"></script>
-    
+    <!--<script type="text/javascript" src="chart.js"></script>-->
 </body>
 </html>
