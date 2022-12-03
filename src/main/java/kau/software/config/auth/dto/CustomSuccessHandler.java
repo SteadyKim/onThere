@@ -40,12 +40,12 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler  {
             HttpSession session = httpServletRequest.getSession();
             session.setAttribute("user", foundUser.get());
 
-            response.sendRedirect("/");
+            response.sendRedirect("https://d2c9qluyjz9a0t.cloudfront.net");
         }
         else {
             request.getSession().setAttribute("email", email);
             request.getSession().setAttribute("oauth", oauth);
-            response.sendRedirect("/join");
+            response.sendRedirect("https://d2c9qluyjz9a0t.cloudfront.net/join");
         }
 
     }

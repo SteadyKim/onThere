@@ -56,7 +56,7 @@ public class UserController {
         }
 
         httpSession.setAttribute("user", foundUser);
-        return "redirect:/";
+        return "redirect:https://d2c9qluyjz9a0t.cloudfront.net";
     }
 
     @GetMapping("/logout")
@@ -64,7 +64,7 @@ public class UserController {
         HttpSession session = request.getSession();
         session.invalidate();
 
-        return "redirect:/";
+        return "redirect:https://d2c9qluyjz9a0t.cloudfront.net";
     }
 
     @GetMapping("/join")
@@ -89,7 +89,7 @@ public class UserController {
         httpSession.setAttribute("user", user);
         userService.join(user);
 
-        return "redirect:/";
+        return "redirect:https://d2c9qluyjz9a0t.cloudfront.net";
     }
 
     @GetMapping("/mypage")
