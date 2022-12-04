@@ -116,6 +116,10 @@ html, body {
     width: 150px;
 }
 
+.welcome-user{
+    color: #fff;
+}
+
 .nav-container {
     padding-right: 100px;
 }
@@ -369,7 +373,7 @@ select:disabled {
     height: 20px;
     box-sizing: border-box;
     text-align:left;
-    width: 600px;
+    width: 700px;
     margin-left: 10%;
 
 }
