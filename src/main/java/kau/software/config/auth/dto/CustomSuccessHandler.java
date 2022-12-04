@@ -40,12 +40,12 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler  {
             HttpSession session = httpServletRequest.getSession();
             session.setAttribute("user", foundUser.get());
 
-            response.sendRedirect("https://d1voio7ld387yh.cloudfront.net");
+            response.sendRedirect("https://onthere.tk/");
         }
         else {
             request.getSession().setAttribute("email", email);
             request.getSession().setAttribute("oauth", oauth);
-            response.sendRedirect("https://d1voio7ld387yh.cloudfront.net/join");
+            response.sendRedirect("https://onthere.tk/join");
         }
 
     }

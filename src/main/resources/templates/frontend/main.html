@@ -20,7 +20,7 @@
             <p class="logo">OnThere</p>
             <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
             <div  class="nav-container">
-                <a th:if="${session.user}" href="/logout">Logout</a>
+                <a th:if="${session.user}" href="/logouts">Logout</a>
                 <a th:unless="${session.user}" href="/logins">Login</a>
                 <a th:unless="${session.user}" href="/join">Join</a>
                 <a th:if="${session.user}" href="/mypage">Mypage</a>

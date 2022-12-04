@@ -56,15 +56,15 @@ public class UserController {
         }
 
         httpSession.setAttribute("user", foundUser);
-        return "redirect:https://d1voio7ld387yh.cloudfront.net";
+        return "redirect:https://onthere.tk/";
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpServletRequest request) {
+    @GetMapping("/logouts")
+    public String logouts(HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.invalidate();
 
-        return "redirect:https://d1voio7ld387yh.cloudfront.net";
+        return "redirect:https://onthere.tk/";
     }
 
     @GetMapping("/join")
@@ -89,7 +89,7 @@ public class UserController {
         httpSession.setAttribute("user", user);
         userService.join(user);
 
-        return "redirect:https://d1voio7ld387yh.cloudfront.net";
+        return "redirect:https://onthere.tk/";
     }
 
     @GetMapping("/mypage")
