@@ -270,7 +270,7 @@ var myBarChart = new Chart(ctx, {
    //마이페이지로 검색 기록 넘기기
    $.ajax({
      type:"GET",
-     url:"/api/record",
+     url:"https://onthere.tk/api/record",
      data: {"location":showlocal, "startDate" :g, "endDate": g } ,
      dataType:"json",
      success: function(data){
