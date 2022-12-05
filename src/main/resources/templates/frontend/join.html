@@ -12,49 +12,49 @@
 </head>
 
 <body>
-    <main>
-        <form name="login-form" class="login-form" method="post" action='' th:object="${userDto}">
-            <div class="try">
-                <h1>OnThere</h1>
-                <div class="essential-notice">
-                    
-                    <div class="essentail-notice-box">
-                        <p class="essential-notice-star">*</p>
-                        <p class="essential-notice-title">필수입력</p>
-                    </div>
+<main>
+    <form name="login-form" class="login-form" method="post" onsubmit="return join_check();" action='' th:object="${userDto}">
+        <div class="try">
+            <h1>OnThere</h1>
+            <div class="essential-notice">
+
+                <div class="essentail-notice-box">
+                    <p class="essential-notice-star">*</p>
+                    <p class="essential-notice-title">필수입력</p>
                 </div>
-
-                <div class="client-signup-container">
-                    <p class="">*</p>
-                    <input id="name" type="text" name="mb_name" th:field="*{name}" placeholder="이름">
-                </div>
-
-                <div class="client-signup-container">
-                    <input th:if="${session.email}"  type="text" name="email" th:value ="${session.email}" placeholder="이메일" readonly>
-                    <input th:unless="${session.email}" type="text" name="email" th:field="*{email}" placeholder="이메일">
-                </div>
-
-                <div class="base-signup-wrap">
-                    <div class="base-signup-container">
-                        <p>*</p>
-                        <input id="uid" type="text" name="username" th:field="*{userId}" placeholder="ID">
-                    </div>
-
-                    <div class="base-signup-container">
-                        <p>*</p>
-                        <input id="pw1" type="password" name="password" th:field="*{password}"placeholder="PW   8~20자리 입력">
-                    </div>
-
-                    <div class="base-signup-container">
-                        <p>*</p>
-                        <input id="pw2" type="password" name="passwordCheck" placeholder="PW 확인">
-                    </div>
-                </div>    
-
-                <input class="signup-btn" type="submit" value="가입하기" onclick="join_check();">
             </div>
-        </form>
-    </main>
+
+            <div class="client-signup-container">
+                <p class="">*</p>
+                <input id="name" type="text" name="mb_name" th:field="*{name}" placeholder="이름">
+            </div>
+
+            <div class="client-signup-container">
+                <input th:if="${session.email}"  type="text" name="email" th:value ="${session.email}" placeholder="이메일" readonly>
+                <input th:unless="${session.email}" type="text" name="email" th:field="*{email}" placeholder="이메일">
+            </div>
+
+            <div class="base-signup-wrap">
+                <div class="base-signup-container">
+                    <p>*</p>
+                    <input id="uid" type="text" name="username" th:field="*{userId}" placeholder="ID">
+                </div>
+
+                <div class="base-signup-container">
+                    <p>*</p>
+                    <input id="pw1" type="password" name="password" th:field="*{password}"placeholder="PW   8~20자리 입력">
+                </div>
+
+                <div class="base-signup-container">
+                    <p>*</p>
+                    <input id="pw2" type="password" name="passwordCheck" placeholder="PW 확인">
+                </div>
+            </div>
+
+            <input class="signup-btn" type="submit" value="가입하기" >
+        </div>
+    </form>
+</main>
 
 </body>
 </html>

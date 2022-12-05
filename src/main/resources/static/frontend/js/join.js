@@ -36,4 +36,6 @@ function join_check() {
         return false;
     }
 
+    return true;
+
 }
