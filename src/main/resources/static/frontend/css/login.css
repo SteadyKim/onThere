@@ -102,8 +102,11 @@ h1 {
     font-size: 17px;
     color: white;
     display: block;
-    margin: 40px auto;
+    margin: 20px auto 0px auto;
+}
 
+.btn_container{
+    margin-top : -15px;
 }
 
 .account {
@@ -120,7 +123,7 @@ button {
     color:white;
     width: 290px;
     height: 46px;
-    border-radius: 14px;
+    border-radius: 44px;
 }
 
 .login:hover {

@@ -28,67 +28,60 @@
         </div>
     </nav>
 
-    <div class="main-box">
+    <main>
         <p class="where-text">어디로 가시나요?</p>
 
-        <div class="in-wrap">
+        <hr align="center" class="line">
 
-            <div class="line"></div>
+        <div class="check-container">
 
-            <div class="check-box-wrap">
-
-                <div class="check-box">
-                    <p>시/도 선택</p>
-                    <form>
-                        <select id="select_value" name="select_value" onchange="addressKindChange(this)" required>
-                            <option value="여행지 선택">여행지 선택</option>
-                            <option value="108" value2="서울">서울</option>
-                            <option value="112" value2="인천">인천</option>
-                            <option value="119" value2="수원">수원</option>
-                            <option value="159" value2="부산">부산</option>
-                            <option value="143" value2="대구">대구</option>
-                            <option value="146" value2="전주">전주</option>
-                            <option value="232" value2="천안">천안</option>
-                            <option value="295" value2="창원">창원</option>
-                            <option value="184" value2="제주">제주</option>
-
-                        </select>
-
-                    </form>
-                </div>
-
-                <div class="check-box">
-                    <p>군/구 선택</p>
-                    <form>
-                        <select id="select_value2" name="select_value2" required>
-                            <option value="여행지 선택">여행지 선택</option>
-                        </select>
-                    </form>
-                </div>
-
-                <div class="check-box">
-                    <p>날짜</p>
-                    <input
-                            class="date"
-                            id="startdate"
-                            type="date"
-                            data-placeholder="날짜 선택"
-                            required
-                            aria-required="true"
-                            className={styles.selectDay}
-                    ></input>
-                </div>
-
-
-
+            <div class="check-box">
+                <p>여행지(시)</p>
+                <form>
+                    <select id="select_value" name="select_value" onchange="addressKindChange(this)">
+                        <option>지역</option>
+                        <option value="108" value2="서울">서울</option>
+                        <option value="112" value2="인천">인천</option>
+                        <option value="119" value2="수원">수원</option>
+                        <option value="159" value2="부산">부산</option>
+                        <option value="143" value2="대구">대구</option>
+                        <option value="146" value2="전주">전주</option>
+                        <option value="232" value2="천안">포항</option>
+                        <option value="295" value2="창원">창원</option>
+                        <option value="184" value2="제주">제주</option>
+                    </select>
+                </form>
             </div>
 
-            <div class="search-box">
-                <input class="search-btn" id="search-btn" type ="button"  value="검색">
-                <img class="search-img" src="frontend/png/search.png" alt="">
+            <div class="check-box">
+                <p>여행지(구)</p>
+                <form>
+                    <select id="select_value2" name="select_value2">
+                        <option>지역</option>
+                    </select>
+                </form>
+            </div>
+
+            <div class="check-box">
+                <p>가는날</p>
+                <input
+                        class="date"
+                        id="startdate"
+                        type="date"
+                        data-placeholder="날짜 선택"
+                        required
+                        aria-required="true"
+                        className={styles.selectDay}
+                ></input>
             </div>
         </div>
-    </div>
+
+        <!-- <div class="search-box"> -->
+        <div class="find-btn">
+            <input class="search-btn" type ="button" onclick="getShow();getJSON();" value="검색">
+            <!-- <img class="search-img" src="search.png" alt=""> -->
+        </div>
+    </main>
 </div>
 
 <div class="result" id="b" style="display: none;">

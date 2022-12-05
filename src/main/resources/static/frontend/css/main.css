@@ -4,84 +4,12 @@
 }
 
 html, body {
-    /* display: block; */
     width: 100%;
     height: 100%;
     margin: 0;
-
-}
-
-/* fonts */
-@font-face {
-	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
-	src: local('Pretendard Variable'), url('./images/PretendardVariable.woff2') format('woff2-variations');
-}
-
-/* thin */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Thin.woff') format('woff');
-    font-weight: 100;
-    font-display: swap;
-}
-/* extra-light */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-display: swap;
-}
-/* light */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Light.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
-}
-/* regular */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-}
-/* medium */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Medium.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
-}
-/* semi-bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-display: swap;
-}
-/* bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
-}
-/* extra-bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-display: swap;
-}
-/* black */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Black.woff') format('woff');
-    font-weight: 900;
-    font-display: swap;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
 }
 
 
@@ -97,6 +25,7 @@ html, body {
     justify-items: center;
 }
 
+/* nav */
 .logo {
     font-size: 30px;
     font-family: Pretendard;
@@ -126,30 +55,49 @@ html, body {
     align-items: center;
     width: 100%;
     height: 54px;
+    margin-bottom: 230px;
 }
 
 
-.where-text {
-    font-size: 50px;
+/* main */
+
+.where-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 54px;
     font-family: Pretendard;
     font-weight: 500;
     color: white;
     margin-bottom: 26px;
-    text-align: left;
 }
 
-.check-box-wrap {
+.line {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    width: 100%;
+    width: 70%;
+    height: 2px;
+    /* transform: rotate(-359.83deg); */
+    opacity: 0.3;
+    background-color: #f5f5f5;
+    place-content: center;
+    margin: auto;
+  }
+
+.check-box{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.check-box {
-    justify-content: space-between;
+.check-container{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    margin-top: 26px;
 }
 
 .check-box p{
@@ -163,178 +111,519 @@ html, body {
     text-align: left;
 }
 
-
-.main-box {
-    width: 1000px;
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    justify-items: center;
-    margin: 220px 16% 0px 16%;
-}
-
-.line {
-    width: 1000px;
-    height: 2.3px;
-    transform: rotate(-359.83deg);
-    opacity: 0.4;
-    background-color: #f5f5f5;
-    place-content: center;
-    margin-bottom: 26px;
-  }
-/* .line {
-    width: 840px;
-    height: 1px;
-    margin: 40px 0 10px 0;
-    border-top: 1px solid #EBEBEB;
-}
-   */
-  .hr-wrap {
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    justify-items: center;
-  }
-
-  .in-wrap {
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-    justify-content: center;
-    justify-items: center;
-
-  }
-
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-
 select {
-  /* 생략 */
-    font-family: "Noto Sansf KR", sans-serif;
+    /* 생략 */
+      font-family: "Noto Sansf KR", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+
+      color: #444;
+      background-color: #fff;
+      background-color:rgba(255, 255, 255, 0.5);
+      /* opacity: 0.3; */
+
+      padding: 0.6em 6.8em 0.7em 6.8em;
+      margin: 0;
+
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 0.5em;
+      box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+
+      -webkit-appearance:none; /* 크롬 화살표 없애기 */
+      -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
+      appearance:none /* 화살표 없애기 */
+  }
+
+  select:hover {
+      border-color: #888;
+  }
+
+  select:focus {
+      border-color: #aaa;
+      box-shadow: 0 0 0 3px -moz-mac-focusring;
+      color: #222;
+      outline: none;
+    }
+
+  select:disabled {
+      opacity: 0.5;
+    }
+
+  /* input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
+      width: 20px;
+      height: 20px;
+      border-width: thin;
+   } */
+
+   .date {
+      font-family: "Noto Sansf KR", sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
 
     color: #444;
-    background-color: #fff;
+    /* background-color: #fff; */
     background-color:rgba(255, 255, 255, 0.5);
     /* opacity: 0.3; */
 
-    padding: 0.6em 6.8em 0.7em 6.8em;
+    padding: 0.6em 5em 0.5em 5em;
     margin: 0;
 
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 0.5em;
     box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+    text-decoration: none;
+   }
 
-    -webkit-appearance:none; /* 크롬 화살표 없애기 */
-    -moz-appearance:none; /* 파이어폭스 화살표 없애기 */
-    appearance:none /* 화살표 없애기 */
-}
+   .date:focus{
+      border-color: #aaa;
 
-select:hover {
-    border-color: #888;
-}
+      box-shadow: 0 0 0 3px -moz-mac-focusring;
+      color: #222;
+      outline: none;
+   }
 
-select:focus {
-    border-color: #aaa;
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222;
-    outline: none;
+  .date:hover {
+      border-color: #888;
   }
 
-select:disabled {
-    opacity: 0.5;
+
+  .date[type="date"]::-webkit-calendar-picker-indicator,
+  .date[type="date"]::-webkit-inner-spin-button {
+       display: none;
+       appearance: none;
+   }
+
+  .date[type="date"]::-webkit-calendar-picker-indicator {
+      color: rgba(0, 0, 0, 0);
+      opacity: 1;
+      display: block;
+      width: 20px;
+      height: 20px;
+      border-width: thin;
+      cursor: pointer;
   }
 
-/* input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 0);
-    opacity: 1;
-    display: block;
-    background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png) no-repeat;
-    width: 20px;
-    height: 20px;
-    border-width: thin;
- } */
-
- .date {
-    font-family: "Noto Sansf KR", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-
-  color: #444;
-  /* background-color: #fff; */
-  background-color:rgba(255, 255, 255, 0.5);
-  /* opacity: 0.3; */
-
-  padding: 0.6em 5em 0.5em 5em;
-  margin: 0;
-
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.5em;
-  box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
-  text-decoration: none;
- }
-
- .date:focus{
-    border-color: #aaa;
-
-    box-shadow: 0 0 0 3px -moz-mac-focusring;
-    color: #222;
-    outline: none;
- }
-
-.date:hover {
-    border-color: #888;
+.find-btn{
+	text-align: right;
 }
 
-
-.date[type="date"]::-webkit-calendar-picker-indicator,
-.date[type="date"]::-webkit-inner-spin-button {
-     display: none;
-     appearance: none;
- }
-
-.date[type="date"]::-webkit-calendar-picker-indicator {
-    color: rgba(0, 0, 0, 0);
-    opacity: 1;
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-width: thin;
-    cursor: pointer;
-}
-
-.search-box {
-    display: flex;
-    width: 70px;
-    justify-content: space-between;
-    margin-top: 20px;
-    text-align: right;
-    margin-left: 930px
-}
-
-.search-btn{
-    width: 100px;
-    height: 31px;
+.search-btn {
+    display :inline-block;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.25);
     font-family: 'Pretendard';
     font-size: 16px;
-    color: #f5f5f5;
-    border:none;
+    color: #ebebeb;
+    border: solid 1px;
+    border-radius: 0.5em;
     text-decoration: none;
-    margin-top: 2px;
     background-color: transparent;
-}
-
-.search-img {
-    width: 22px;
-    height: 22px;
     cursor: pointer;
+    padding: 4px 20px;
+    margin-right: 17%;
+    margin-top: 2%;
 }
 
+.search-btn:hover {
+    border-color: #888;
+    color: white;
+    background-color: #fff;
+    background-color:rgba(255, 255, 255, 0.4);
+  }
+
+
+
+
+/* -----------------------결과페이지---------------------------*/
+
+.result {
+    background-image: url('resultback.png');
+    /* background-position: left top; */
+    background-repeat: no-repeat;
+    /* background-size: 1920px 350px; */
+    height: 100vh;
+    width: 100vw;
+    min-width: 1300px;
+}
+
+.container {
+    width: auto;
+    margin-top: 130px;
+    padding-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 0;
+    background: #fff;
+    height: 70px;
+
+}
+
+.search-result {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 10px;
+    height: 20px;
+    box-sizing: border-box;
+    text-align:left;
+    width: 1000px;
+    margin-left: 10%;
+
+}
+
+.search-content-1, .search-content-2, .search-content-3 {
+    color: #C8C8C8;
+    font-size: 14px;
+    font-family:'Pretendard-Regular';
+}
+
+.result-content-1, .result-content-2{
+
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    width: 210px;
+    height: 25px;
+    margin: 0;
+    padding: 1px 30px;
+    border: 2px solid #c8c8c8;
+    border-radius: 20px;
+    font-family: "Pretendard-regular";
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    outline: none;
+
+}
+
+.result-content-3{
+    line-height: 1.5;
+    color: #444;
+    background-color: #fff;
+    width: 150px;
+    height: 20px;
+    margin: 0;
+    padding: 1px 30px;
+    border: 2px solid #c8c8c8;
+    border-radius: 20px;
+    font-family: "Pretendard-regular";
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+.result-content-3:hover{
+    border-color: #888;
+
+}
+
+
+.clear-box{
+    display: block;
+    margin-LEFT: 65%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    width: 20vw;
+    min-width: 180px;
+    height: 15vh;
+    padding-top: 1.5%;
+    background-color: #ffffff;
+    background-color: rgba( 255, 255, 255, 0.3 );
+    border-radius: 3%;
+    margin-top: 100px;
+    color:#fff;
+
+}
+
+
+
+section{
+    display: flex;
+    justify-content:right;
+    align-items: center;
+    text-align: center;
+    font-size: 32px;
+    font-family:'Pretendard-ExtraBold;';
+    font-weight: 800;
+    padding-right: 30px;
+}
+
+.clear-box img{
+    width: 50px;
+}
+
+.clear-date{
+    padding-top: 10px;
+    font-size: 20px;
+    font-family: 'Pretendard-regular';
+
+}
+
+.info{
+    width: 100%;
+    display: flex;
+    padding-top: 0;
+    margin: 0 auto;
+    height: 55%;
+    background-color: rgba(213, 213, 213, 0.24);
+    min-width: 1300px;
+}
+
+.weather{
+    display: block;
+    margin-LEFT: 10%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 240px;
+    min-width: 240px;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 3%;
+    margin-top: 40px;
+    color:black;
+}
+
+.info-txt{
+    margin-left: 10%;
+    margin-top: 10%;
+    font-family: "Pretendard-regular";
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+canvas{
+    width: 320;
+    height: 460;
+}
+.graph{
+    display: block;
+    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 400Px;
+    min-width: 400px;
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 3%;
+    margin-top: 40px;
+    color:black;
+}
+
+.tourist-count{
+    display: block;
+    margin-left: 10%;
+    margin-RIGHT: 10%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 260Px;
+    min-width: 260px;
+    height: 80%;
+    background-color: #4c87da;
+    border-radius: 3%;
+    margin-top: 40px;
+    color:white;
+}
+
+.last-year-card{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    height: 25%;
+    background-color: #4c87da;
+    border-radius: 3%;
+    margin-top: 10px;
+    color:white;
+
+}
+
+.temp{
+    border-bottom:2px solid white;
+    padding-bottom:1px;
+    font-family: "Pretendard-regular";
+    font-size: 32px;
+    font-weight: bold;
+
+}
+
+.temp2{
+    border-bottom:2px solid white;
+    padding-bottom:1px;
+    font-family: "Pretendard-regular";
+    font-size: 32px;
+    font-weight: bold;
+
+}
+
+.last-date{
+    font-family: "Pretendard-regular";
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.weather-info{
+    display: block;
+    padding-left: 10px;
+
+}
+
+.weather-notice{
+    font-family: "Pretendard-regular";
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    text-align: left;
+
+}
+/*
+.this-year-card{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    height: 25%;
+    background-color: #4c87da;
+    border-radius: 3%;
+    margin-top: 10px;
+    color:white;
+    font-family: "Pretendard-regular";
+    font-size: 24px;
+    font-weight: bold;
+
+}*/
+
+.this-year-card{
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+    height: 25%;
+    background-color: #4c87da;
+    border-radius: 3%;
+    margin-top: 10px;
+    color:white;
+
+}
+
+.graph canvas{
+
+    margin-left: 10%;
+    margin-top: 3%;
+}
+
+.complexity{
+    display: flex;
+
+}
+
+.tourist-date {
+    text-align: right;
+    font-family: "Pretendard-regular";
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+.tour-txt1{
+    text-align: center;
+    font-family: "Pretendard-regular";
+    font-size: 16px;
+    margin-right: 25%;
+    margin-top: 20%;
+
+}
+
+.tour-count{
+    text-align: center;
+    font-family: "Pretendard-regular";
+    font-size: 40px;
+
+    font-weight: bold;
+}
+
+.tour-txt2{
+    text-align: center;
+    font-family: "Pretendard-regular";
+    font-size: 16px;
+    margin-right: 40%;
+    margin-top: 15%;
+
+}
+
+
+.complexity-txt{
+    font-family: "Pretendard-regular";
+    font-size: 36px;
+    font-weight: bold;
+
+}
+
+
+
+.complexity {
+    margin-left: 17%;
+    font-family: "Pretendard-regular";
+}
+
+
+.tour-txt3{
+
+    padding-top: 10%;
+
+}
+
+.search-btn2 {
+
+
+    background-color:#4c87da;
+    color: #fff;
+    border: none;
+    border-radius:10px;
+    padding:7px;
+    min-height:6px;
+    min-width: 60px;
+    font-family:"Pretendard-regular";
+    font-weight:bold;
+
+
+}
+
+.bonus{
+    background-color:#fff;
+    color: #4c87da;
+    font-family:"Pretendard-regular";
+    font-weight:bold;
+    text-decoration: none;
+
+}
+
+.bonus:hover{
+    background-color:#fff;
+    color: #4c87da;
+    font-family:"Pretendard-regular";
+    font-weight:bold;
+    text-decoration: none;
+    border-bottom:2px solid #4c87da;
+
+}
 
 /* -----------------------결과페이지---------------------------*/
 
