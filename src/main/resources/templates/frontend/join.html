@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Signup</title>
     <link rel="stylesheet" href="frontend/css/join.css" type="text/css">
+    <script type=""src="frontend/js/join.js"></script>
 </head>
 
 <body>
     <main>
-        <form class="login-form" method="post" action='' th:object="${userDto}">
+        <form name="login-form" class="login-form" method="post" action='' th:object="${userDto}">
             <div class="try">
                 <h1>OnThere</h1>
                 <div class="essential-notice">
@@ -24,7 +26,7 @@
 
                 <div class="client-signup-container">
                     <p class="">*</p>
-                    <input type="text" name="mb_name" th:field="*{name}" placeholder="이름">
+                    <input id="name" type="text" name="mb_name" th:field="*{name}" placeholder="이름">
                 </div>
 
                 <div class="client-signup-container">
@@ -35,21 +37,21 @@
                 <div class="base-signup-wrap">
                     <div class="base-signup-container">
                         <p>*</p>
-                        <input type="text" name="username" th:field="*{userId}" placeholder="ID">
+                        <input id="uid" type="text" name="username" th:field="*{userId}" placeholder="ID">
                     </div>
 
                     <div class="base-signup-container">
                         <p>*</p>
-                        <input type="password" name="password" th:field="*{password}"placeholder="PASSWORD">
+                        <input id="pw1" type="password" name="password" th:field="*{password}"placeholder="PW   8~20자리 입력">
                     </div>
 
                     <div class="base-signup-container">
                         <p>*</p>
-                        <input type="password" name="passwordCheck" placeholder="비밀번호 확인">
+                        <input id="pw2" type="password" name="passwordCheck" placeholder="PW 확인">
                     </div>
                 </div>    
 
-                <input class="signup-btn" type="submit" value="가입하기">
+                <input class="signup-btn" type="submit" value="가입하기" onclick="join_check();">
             </div>
         </form>
     </main>
