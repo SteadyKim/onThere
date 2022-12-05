@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,8 +42,16 @@ public class RecordApiController {
         return recordDtoList;
     }
     @PostMapping("/record")
-    public void addRecordApi(@RequestBody RecordDto recordDto) {
+    public void addRecordApi(@RequestParam("location") String location,
+                             @RequestParam("startDate") String startDate,
+                             @RequestParam("endDate") String endDate) {
         Users user = (Users) httpSession.getAttribute("user");
+
+        RecordDto recordDto = new RecordDto();
+
+        recordDto.setLocation(location);
+        recordDto.setStartDate(LocalDate.parse(startDate, DateTimeFormatter.ISO_DATE));
+        recordDto.setEndDate(LocalDate.parse(endDate, DateTimeFormatter.ISO_DATE));
 
         if(user == null) {
             return;

@@ -269,10 +269,10 @@ var myBarChart = new Chart(ctx, {
 
    //마이페이지로 검색 기록 넘기기
    $.ajax({
-     type:"GET",
-     url:"https://onthere.tk/api/record",
+     type:"POST",
+     url:"/api/record",
      data: {"location":showlocal, "startDate" :g, "endDate": g } ,
-     dataType:"json",
+     dataType:"application/json",
      success: function(data){
          console.log("통신성공");
 

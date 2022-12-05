@@ -56,7 +56,7 @@ public class UserController {
         }
 
         httpSession.setAttribute("user", foundUser);
-        return "redirect:https://onthere.tk/";
+        return "redirect:/";
     }
 
     @GetMapping("/logouts")
