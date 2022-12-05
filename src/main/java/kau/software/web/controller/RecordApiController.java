@@ -42,6 +42,10 @@ public class RecordApiController {
     @PostMapping("/record")
     public void addRecordApi(@RequestBody RecordDto recordDto) {
         Users user = (Users) httpSession.getAttribute("user");
+
+        if(user == null) {
+            return;
+        }
         Users foundUser = userService.findById(user.getId());
 
         userService.updateRecord(foundUser, recordDto.toEntity());
