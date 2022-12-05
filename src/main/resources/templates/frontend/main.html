@@ -39,7 +39,7 @@
                 <p>여행지(시)</p>
                 <form>
                     <select id="select_value" name="select_value" onchange="addressKindChange(this)">
-                        <option>지역</option>
+                        <option value="지역">지역</option>
                         <option value="108" value2="서울">서울</option>
                         <option value="112" value2="인천">인천</option>
                         <option value="119" value2="수원">수원</option>
@@ -57,7 +57,7 @@
                 <p>여행지(구)</p>
                 <form>
                     <select id="select_value2" name="select_value2">
-                        <option>지역</option>
+                        <option value="지역">지역</option>
                     </select>
                 </form>
             </div>
@@ -78,7 +78,7 @@
 
         <!-- <div class="search-box"> -->
         <div class="find-btn">
-            <input class="search-btn" type ="button" onclick="getShow();getJSON();" value="검색">
+            <input id="search-btn" class="search-btn" type ="button"  value="검색">
             <!-- <img class="search-img" src="search.png" alt=""> -->
         </div>
     </main>
