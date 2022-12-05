@@ -269,13 +269,13 @@ var myBarChart = new Chart(ctx, {
 
    //마이페이지로 검색 기록 넘기기
    $.ajax({
-     type:"POST",
+     type:"GET",
      url:"/api/record",
-     data: {"location":showlocal, "startDate" :g, "endDate": "2022-12-25" } ,
+     data: {"location":showlocal, "startDate" :g, "endDate": g } ,
      dataType:"json",
      success: function(data){
          console.log("통신성공");
-         console.log(data);
+
      },
      error:function(){
          console.log("통신에러");
