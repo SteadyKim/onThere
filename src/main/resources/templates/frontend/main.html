@@ -84,6 +84,8 @@
     </main>
 </div>
 
+
+
 <div class="result" id="b" style="display: none;">
     <nav class="nav-wrap">
         <a href="" class="logo">OnThere</a>
@@ -99,18 +101,19 @@
     <div class="clear-box">
         <p class="clear-date" id="cleardate">2022 . 11 . 24</p>
         <section>
-            <img id="image" src="frontend/png/location.png" >
-            <p class="place" id="selectedlocal">부산</p>
+            <div class="location">
+                <img id="image" src="frontend/png/location.png" >
+                <p class="place" id="selectedlocal">부산</p>
+            </div>
         </section>
-
     </div>
-    <div class="container">
-        <div class="search-result">
-            <div>
-                <p class="search-content-1">여행지(시)</p>
+    
+    <div class="check-container2">
+        <div class="check-box2">
+            <p>여행지(시)</p>
                 <!--<p class="result-content-1" id="selectedlocal2">부산</p>-->
                 <select class="result-content-1" id="reselect_value" name="select_value" onchange="addressKindChange2(this)">
-                    <option>여행지 선택</option>
+                    <option>지역</option>
                     <option value="108" value2="서울">서울</option>
                     <option value="112" value2="인천">인천</option>
                     <option value="119" value2="수원">수원</option>
@@ -120,31 +123,30 @@
                     <option value="232" value2="천안">천안</option>
                     <option value="295" value2="창원">창원</option>
                     <option value="184" value2="제주">제주</option>
-
                 </select>
             </div>
-            <div>
-                <p class="search-content-2">여행지(구)</p>
+
+        <div class="check-box2">
+            <p>여행지(구)</p>
                 <form>
-                    <select class="result-content-2" id="reselect_value2" name="reselect_value2">
-                        <option>여행지 선택</option>
+                    <select class="result-content-1" id="reselect_value2" name="reselect_value2">
+                        <option>지역</option>
                     </select>
                 </form>
             </div>
 
-            <div>
-                <p class="search-content-3">날짜</p>
-                <input type="date" class="result-content-3" id="dayselect">
+            <div class="check-box2">
+                <p>가는날</p>
+                <input  class="date2" type="date" id="dayselect">
             </div>
 
             <input class="search-btn2" type ="button" onclick="getShow();getJSON2();" value="검색">
 
-            <a href="/bonus" class="bonus">관광지 추천 바로가기</a>
+            <a href="/bonus" class="bonus"> 관광지 핫플 바로가기 🛫</a>
 
         </div>
 
 
-    </div>
     <div class="info">
         <div class="weather">
             <p class="info-txt">날씨</p>
@@ -183,7 +185,7 @@
             </div>
         </div>
     </div>
-
+</div>
 </div>
 </body>
 </html>
