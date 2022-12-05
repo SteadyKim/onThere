@@ -75,7 +75,17 @@ public class UserController {
     }
 
     @PostMapping("/join")
-    public String join(@ModelAttribute CreateUserDto userDto, HttpServletRequest request) {
+    public String join(@ModelAttribute CreateUserDto userDto, HttpServletRequest request, Model model) {
+        // 중복 체크
+        String userId = userDto.getUserId();
+        Users foundUser = userService.findByUserId(userId);
+        System.out.println("foundUser = " + foundUser.getUserId());
+
+        if(foundUser != null) {
+            model.addAttribute("userDto", new CreateUserDto());
+            model.addAttribute("over", "error");
+            return "frontend/join";
+        }
 
         Users user = userDto.toEntity();
 
@@ -89,7 +99,7 @@ public class UserController {
         httpSession.setAttribute("user", user);
         userService.join(user);
 
-        return "redirect:/";
+        return "redirect:https://onthere.tk/";
     }
 
     @GetMapping("/mypage")

@@ -34,11 +34,12 @@
                 <input th:unless="${session.email}" type="text" name="email" th:field="*{email}" placeholder="이메일">
             </div>
 
-            <div class="base-signup-wrap">
-                <div class="base-signup-container">
-                    <p>*</p>
-                    <input id="uid" type="text" name="username" th:field="*{userId}" placeholder="ID">
-                </div>
+                <div class="base-signup-wrap">
+                    <div class="base-signup-container">
+                        <p>*</p>
+                        <input id="uid" type="text" name="username" th:field="*{userId}" placeholder="ID">
+                        <p  style="color:red;" th:if="${over}" th:text="|ID 중복|"></p>
+                    </div>
 
                 <div class="base-signup-container">
                     <p>*</p>
