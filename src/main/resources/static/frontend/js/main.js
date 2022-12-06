@@ -287,7 +287,7 @@ var myBarChart = new Chart(ctx, {
   $.ajax({
   type:"get",
   url:"https://aygix7ub7k.execute-api.ap-northeast-2.amazonaws.com/beta/result",
-  data: {"date_str": g, "temp_region_code": test, "visit_region_code": visitcode},
+  data: {"date_str": g, "temp_region_code": test, "visit_region_code": visitcode, "region_name":local},
   dataType:"json",
   success: function(data){
       console.log("통신성공");
@@ -312,7 +312,7 @@ var myBarChart = new Chart(ctx, {
         document.getElementById("this-date").innerHTML = "* 기온 정보가 없습니다.";
       }
       else{
-        document.getElementById("thistemp").innerHTML = num[3];
+        document.getElementById("thistemp").innerHTML = num[20];
         document.getElementById("this-date").innerHTML = g;
       }
 
