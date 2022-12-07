@@ -98,7 +98,7 @@ public class UserController {
         httpSession.setAttribute("user", user);
         userService.join(user);
 
-        return "redirect:/";
+        return "redirect:https://onthere.tk/";
     }
 
     @GetMapping("/mypage")
