@@ -79,7 +79,6 @@ public class UserController {
         // 중복 체크
         String userId = userDto.getUserId();
         Users foundUser = userService.findByUserId(userId);
-        System.out.println("foundUser = " + foundUser.getUserId());
 
         if(foundUser != null) {
             model.addAttribute("userDto", new CreateUserDto());
@@ -99,7 +98,7 @@ public class UserController {
         httpSession.setAttribute("user", user);
         userService.join(user);
 
-        return "redirect:https://onthere.tk/";
+        return "redirect:/";
     }
 
     @GetMapping("/mypage")
