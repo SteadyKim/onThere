@@ -11,11 +11,24 @@ html, body {
     align-items: center;
 }
 
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
 /* nav */
 .logo {
     font-size: 30px;
-    font-family: Pretendard;
+    font-family: 'Pretendard-Regular';
     font-weight: 600;
     color: #4C87DA;
     padding-left: 100px;
@@ -23,7 +36,7 @@ html, body {
 }
 
 .nav-container a {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     font-size: 14px;
     color: black;
@@ -50,6 +63,7 @@ html, body {
 
 
 .tour-place-name {
+    font-family: 'Pretendard-Regular';
     background: #FFFFFF;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -74,6 +88,7 @@ html, body {
 }
 
 .tour-place-name-a {
+    font-family: 'Pretendard-Regular';
     background: #FFFFFF;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
@@ -102,6 +117,7 @@ html, body {
 
 
 .tour-card-box {
+    font-family: 'Pretendard-Regular';
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -109,6 +125,7 @@ html, body {
 }
 
 section {
+    font-family: 'Pretendard-Regular';
     width: 280px;
     height: 280px;
     margin-right: 20px;
@@ -132,11 +149,12 @@ section:hover {
 }
 
 .tour-card-name {
+    font-family: 'Pretendard-Regular';
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2px;
-    font-family: 'Pretendard';
+    
     font-weight: 700;
     font-size: 16px;
     color: #343a40;
@@ -150,6 +168,7 @@ section:hover {
 }
 
 .tour-card-info-box {
+    font-family: 'Pretendard-Regular';
     margin: 0 10px;
 }
 
@@ -159,7 +178,7 @@ section:hover {
     align-items: center;
     padding: 6px 0;
     text-align: center;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     font-size: 12px;
     letter-spacing: 0.14em;

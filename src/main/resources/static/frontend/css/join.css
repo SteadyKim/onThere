@@ -10,8 +10,22 @@ main {
 }
 
 
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
 h1 {
-    font-family: 'LeferiBaseType-BoldA';
+    font-family: 'Pretendard-Regular';
     text-align: center;
     color: #4C87DA;
     font-size: 40px;
@@ -20,6 +34,7 @@ h1 {
 
 
 .essential-notice {
+    font-family: 'Pretendard-Regular';
     display: flex;
     justify-content: space-between;
     width: 500px;
@@ -33,7 +48,7 @@ h1 {
 }
 
 .essential-notice-star {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color:#4C87DA;
     font-size: 15px;
@@ -41,18 +56,20 @@ h1 {
 }
 
 .essential-notice-title {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color: #535c6a;
     font-size: 15px;
 }
 
 .base-signup-wrap {
+    
     align-items: center;
     margin-bottom: 30px;
 }
 
 .base-signup-container {
+    font-family: 'Pretendard-Regular';
     display: flex;
     align-items: center;
     border-style: solid;
@@ -66,7 +83,7 @@ h1 {
 }
 
 .base-signup-container p {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color:#4C87DA;
     font-size: 15px;
@@ -107,14 +124,14 @@ h1 {
 }
 
 .client-signup-container p {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color:#4C87DA;
     font-size: 15px;
 }
 
 .client-signup-container input {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 200;
     width: 100%;
     border-radius: 44px;
@@ -136,14 +153,14 @@ h1 {
 }
 
 .client-signup-box p {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color:#4C87DA;
     font-size: 15px;
 }
 
 .client-signup-box input {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 200;
     width: 100%;
     border-radius: 6px;
@@ -165,14 +182,14 @@ h1 {
 }
 
 .client-signup-box-two p {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 300;
     color:#4C87DA;
     font-size: 15px;
 }
 
 .client-signup-box-two input {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 200;
     width: 100%;
     border-radius: 6px;
@@ -185,7 +202,7 @@ h1 {
     width: 100%;
     height: 48px;
     border-radius: 44px;
-    font-family: 'Pretendard';
+    font-family: 'Pretendard-Regular';
     font-weight: 600;
     font-size: 15px;
     color: white;
@@ -203,107 +220,6 @@ h1 {
 * {
     margin: 0;
     padding: 0;
-}
-
-@font-face {
-    font-family: 'LeferiPoint-BlackA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-BlackA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LeferiBaseType-RegularA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-RegularA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* font */
-@font-face {
-    font-family: 'LeferiBaseType-BoldA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiBaseType-BoldA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
-	src: local('Pretendard Variable'), url('./images/PretendardVariable.woff2') format('woff2-variations');
-}
-
-/* thin */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Thin.woff') format('woff');
-    font-weight: 100;
-    font-display: swap;
-}
-/* extra-light */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-display: swap;
-}
-/* light */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Light.woff') format('woff');
-    font-weight: 300;
-    font-display: swap;
-}
-/* regular */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-display: swap;
-}
-/* medium */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Medium.woff') format('woff');
-    font-weight: 500;
-    font-display: swap;
-}
-/* semi-bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-display: swap;
-}
-/* bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Bold.woff') format('woff');
-    font-weight: 700;
-    font-display: swap;
-}
-/* extra-bold */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-ExtraBold.woff') format('woff');
-    font-weight: 800;
-    font-display: swap;
-}
-/* black */
-@font-face {
-    font-family: 'Pretendard';
-    src: url('./images/Pretendard-Black.woff') format('woff');
-    font-weight: 900;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'IBMPlexSansKR-Light';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
 }
 
 

@@ -18,26 +18,42 @@
 </script>
 
 </head>
-		<div class="logo-container">
-			<a class="logo" href="/main">OnThere</a>
-			</div>
-			
-			<div class="wrap">
-				<p class="list-txt">방문기록</p>
-				<table>
-					<tr class= "detail-box" th:each="record : ${records}">
-						<td	class="detail-boxs">
-							<p class="detail-text" th:text="${record.location}"></p>
-							<p class="detail-text" th:text="${record.startDate}"></p>
-							<p class="detail-text" th:text="${record.endDate}"></p>
-						</td>
+<body>
+	<div class="logo-container">
+		<a class="logo" href="/main">OnThere</a>
+	</div>
 
-						<td>
-							<input type="button" th:id="${record.id}" value="X" onclick="rowDel(this)">
-						</td>
-					</tr>
-				</table>
-			</div>
+	<div class="two">
+		<div class="mypage-box">
+			<p class="mypage-txt">MY PAGE</p>
+			
+			<p class="mypage-detail">기본 설정</p>
+			<p class="mypage-detail">회원 정보</p>
+			<hr align="center" class="line">
+			<p class="mypage-detail">추천 관광지</p>
+			<hr align="center" class="line">
+			<p class="mypage-detail">서비스 안내</p>
+			<hr align="center" class="line">
+			<p class="mypage-detail">공지사항</p>
 		</div>
+			
+		<div class="wrap">
+			<p class="list-txt">방문기록</p>
+			<table>
+				
+				<tr class= "detail-box" th:each="record : ${records}">
+					<td	class="detail-boxs">
+						<p class="detail-text" th:text="${record.location}"></p>
+						<p class="detail-text" th:text="${record.startDate}"></p>
+						<p class="detail-text" th:text="${record.endDate}"></p>
+					</td>
+
+					<td>
+						<input type="button" th:id="${record.id}" value="X" onclick="rowDel(this)">
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
     </body>
 </html>
