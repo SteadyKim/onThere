@@ -18,8 +18,8 @@
             <p class="social-login-title">다른 계정으로 로그인</p>
 
             <div class="social-login-container">
-                <img style="cursor: pointer;" src="frontend/png/google.png" alt=""  onclick="location.href='/oauth2/authorization/google'">
-                <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="location.href='/oauth2/authorization/naver'">
+                <img style="cursor: pointer;" src="frontend/png/google.png" alt=""  onclick="location.href='http://ec2-13-125-51-70.ap-northeast-2.compute.amazonaws.com/oauth2/authorization/google'">
+                <img style="cursor: pointer;" src="frontend/png/naver.png" alt=""  onclick="location.href='http://ec2-13-125-51-70.ap-northeast-2.compute.amazonaws.com/oauth2/authorization/naver'">
             </div>
             
             <form class="login-form" method="post" action='' th:object = "${loginUserDto}">

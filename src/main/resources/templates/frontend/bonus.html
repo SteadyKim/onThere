@@ -10,7 +10,7 @@
 </head>
 <body>
     <nav class="nav-wrap">
-        <a href="/main" class="logo">OnThere</a>
+        <a href="/" class="logo">OnThere</a>
          <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
         <div  class="nav-container">
             <a th:if="${session.user}" href="/mypage">Mypage</a>
