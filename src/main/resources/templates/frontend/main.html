@@ -19,7 +19,7 @@
 <div class="main" id ="a">
     <nav class="nav-wrap">
         <p class="logo">OnThere</p>
-        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+        <p class="welcome-msg" th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
         <div  class="nav-container">
             <a th:if="${session.user}" href="/logouts">Logout</a>
             <a th:unless="${session.user}" href="/logins">Login</a>
@@ -89,7 +89,7 @@
 <div class="result" id="b" style="display: none;">
     <nav class="nav-wrap">
         <a href="" class="logo">OnThere</a>
-        <p th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
+        <p class="welcome-msg" th:if="${session.user}" th:text="|${session.user.name}님 반갑습니다.|"></p>
         <div  class="nav-container">
             <a th:if="${session.user}" href="/logout">Logout</a>
             <a th:unless="${session.user}" href="/logins">Login</a>
@@ -149,7 +149,7 @@
 
     <div class="info">
         <div class="weather">
-            <p class="info-txt">날씨</p>
+            <p class="info-txt">기온</p>
             <div class="last-year-card">
                 <div class="weather-info">
                     <p class="temp" id="lasttemp">4º</p>

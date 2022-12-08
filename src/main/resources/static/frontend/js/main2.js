@@ -241,6 +241,19 @@ function getJSON2() {
   else if(smalllocal == "진해구"){
     visitcode = "48129"}
 
+    $.ajax({
+         type:"POST",
+         url:"/api/record",
+         data: {"location":showlocal, "startDate" :g, "endDate": g } ,
+         dataType:"application/json",
+         success: function(data){
+             console.log("통신성공");
+
+         },
+         error:function(){
+             console.log("통신에러");
+         }
+    })
 
 
     $.ajax({

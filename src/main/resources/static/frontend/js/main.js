@@ -3,7 +3,7 @@ $(function () {
         var select_value = $("#select_value");
         var select_value2 = $("#select_value2");
         var select_startDate = $("#startdate");
-        if (select_value.val() == "지역" || select_value2.val() == "선택" || select_value2.val() == "지역" || select_startDate.val() == "") {
+        if (select_value.val() == "지역" || select_value2.val() == "선택" || select_value2.val() == "" || select_value2.val() == "지역" || select_startDate.val() == "") {
             //If the "Please Select" option is selected display error.
             alert("여행지와 날짜를 선택해주세요!");
             return false;
