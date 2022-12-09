@@ -269,7 +269,7 @@ function getJSON2() {
 
 
         var num = data;
-        document.getElementById("lasttemp").innerHTML = num[3]; //작년기온
+        document.getElementById("lasttemp").innerHTML = num[3]+"°"; //작년기온
         document.getElementById("lastyeardate").innerHTML = lastdate; //기온-작년날짜
         document.getElementById("selectedday").innerHTML = g; //예측관광객카드 날짜
         //document.getElementById("tourcount").innerHTML = num[18]+" 명";
@@ -282,7 +282,7 @@ function getJSON2() {
             document.getElementById("this-date").innerHTML = "* 기온 정보가 없습니다.";
         }
         else{
-            document.getElementById("thistemp").innerHTML = num[20];
+            document.getElementById("thistemp").innerHTML = num[20]+"°";
             document.getElementById("this-date").innerHTML = g;
         }
 

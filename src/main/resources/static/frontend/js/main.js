@@ -295,7 +295,7 @@ var myBarChart = new Chart(ctx, {
 
 
       var num = data;
-      document.getElementById("lasttemp").innerHTML = num[3];
+      document.getElementById("lasttemp").innerHTML = num[3]+"°";
       document.getElementById("lastyeardate").innerHTML = lastdate;
       document.getElementById("cleardate").innerHTML = g;
       //sdocument.getElementById("godate").innerHTML = g;
@@ -312,7 +312,7 @@ var myBarChart = new Chart(ctx, {
         document.getElementById("this-date").innerHTML = "* 기온 정보가 없습니다.";
       }
       else{
-        document.getElementById("thistemp").innerHTML = num[20];
+        document.getElementById("thistemp").innerHTML = num[20]+"°";
         document.getElementById("this-date").innerHTML = g;
       }
 
