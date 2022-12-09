@@ -13,6 +13,15 @@ public class TravelDto {
 
     String url;
 
+    String link;
+
+    public TravelDto(String name, String location, String url, String link) {
+        this.name = name;
+        this.location = location;
+        this.url = url;
+        this.link = link;
+    }
+
     public TravelDto(String name, String location, String url) {
         this.name = name;
         this.location = location;
