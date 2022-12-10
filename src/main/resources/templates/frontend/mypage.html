@@ -8,7 +8,7 @@
  async function rowDel(obj)
  {
      let tr = obj.parentNode.parentNode;
-	 const res =  await fetch(`http://localhost:8080/api/record/${obj.id}`,{
+	 const res =  await fetch(`https://onthere.tk/api/record/${obj.id}`,{
 		 method:"DELETE",
 	 }).then(res => console.log(res))
 			 .catch(e => console.log(e))
