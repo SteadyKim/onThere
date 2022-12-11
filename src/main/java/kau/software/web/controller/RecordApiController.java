@@ -30,7 +30,6 @@ public class RecordApiController {
     @GetMapping("/record")
     public List<RecordDto> findRecordApi() {
         Users user = (Users) httpSession.getAttribute("user");
-        //TODO 1은 userId로 변경할 것.
         List<Record> records = recordService.findRecordsById(user.getId());
 
         List<RecordDto> recordDtoList = new ArrayList<>();

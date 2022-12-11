@@ -281,6 +281,7 @@ var myBarChart = new Chart(ctx, {
   $.ajax({
   type:"get",
   url:"https://aygix7ub7k.execute-api.ap-northeast-2.amazonaws.com/beta/result",
+      headers: { 'Origin': 'https://onthere.tk' },
   data: {"date_str": g, "temp_region_code": test, "visit_region_code": visitcode, "region_name":local},
   dataType:"json",
   success: function(data){
