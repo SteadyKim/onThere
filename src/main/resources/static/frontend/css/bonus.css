@@ -127,7 +127,7 @@ html, body {
 section {
     font-family: 'Pretendard-Regular';
     width: 280px;
-    height: 280px;
+    height: 300px;
     margin-right: 20px;
     margin-bottom: 20px;
     background: #FFFFFF;
@@ -183,4 +183,23 @@ section:hover {
     font-size: 12px;
     letter-spacing: 0.14em;
     color: #343a40;
+}
+
+.go_page {
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: #A9C8F3;
+    /* font-family:"Pretendard-regular"; */
+    /* font-weight:bold; */
+    text-decoration: none;
+}
+
+.go_page:hover{
+    background-color:#fff;
+    color: #042759;
+    /* font-family:"Pretendard-regular"; */
+    /* font-weight:bold; */
+    text-decoration: none;
+    border-bottom:1px solid #042759;
 }

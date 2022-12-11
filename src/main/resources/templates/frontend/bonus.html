@@ -38,7 +38,7 @@
                         <p th:text="${travelDto.location}"> travel location</p>
                     </div>
                     <div th:if="${travelDto.link}" class="tour-card-address">
-                        <a target="_blank" th:href="@{${travelDto.link}}">홈페이지로 이동하기</a>
+                        <a class="go_page" target="_blank" th:href="@{${travelDto.link}}">홈페이지로 이동하기</a>
                     </div>
                 </div>
             </section>
