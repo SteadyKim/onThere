@@ -20,7 +20,7 @@ function addressKindChange(e){
     var jeju = ["선택", "제주시", "서귀포시"];
     var pusan = ["선택", "영도구", "부산진구", "동래구", "해운대구", "강서구", "수영구", "기장군"];
     var daegu = ["선택", "수성구", "달서구", "달성군"];
-    var incheon = ["선택", "중구", "동구", "미추홀구", "연수구", "남동구", "부평구", "계양구", "서구", "강화군", "옹진군"];
+    var incheon = ["선택", "중구", "동구", "연수구", "남동구", "계양구", "서구", "강화군"];
     var suwon = ["선택", "장안구", "권선구", "팔달구", "영통구"];
     var jeonju = ["선택", "완산구", "덕진구"];
     var changwon = ["선택", "의창구", "성산구", "마산합포구", "마산회원구", "진해구"];
@@ -220,22 +220,16 @@ var myBarChart = new Chart(ctx, {
     visitcode = "28110"}
   else if(smalllocal == "동구"){
     visitcode = "28140"}
-  else if(smalllocal == "미추홀구"){
-    visitcode = "28177"}
   else if(smalllocal == "연수구"){
     visitcode = "28185"}
   else if(smalllocal == "남동구"){
     visitcode = "28200"}
-  else if(smalllocal == "부평구"){
-    visitcode = "28237"}
   else if(smalllocal == "계양구"){
     visitcode = "28245"}
   else if(smalllocal == "서구"){
     visitcode = "28260"}
   else if(smalllocal == "광화군"){
-    visitcode = "28710"}
-  else if(smalllocal == "옹진군"){
-    visitcode = "29720"}//수원
+    visitcode = "28710"}//수원
   else if(smalllocal == "장안구"){
     visitcode = "41111"}
   else if(smalllocal == "권선구"){
@@ -312,16 +306,16 @@ var myBarChart = new Chart(ctx, {
         document.getElementById("this-date").innerHTML = "* 기온 정보가 없습니다.";
       }
       else{
-        document.getElementById("thistemp").innerHTML = num[20]+"°";
+        document.getElementById("thistemp").innerHTML = num[17]+"°";
         document.getElementById("this-date").innerHTML = g;
       }
 
-
+       ml = JSON.stringify(num[16].result); //string
 
       num1 = num[6]*1;
       num2 = num[10]*1;
       num3 = num[14]*1;
-      num4 = num[18]*1;
+      num4 = ml*1;
       avg_visit = (num1+num2+num3)/3;
 
       res = num4.toLocaleString('en-US');
@@ -337,7 +331,7 @@ var myBarChart = new Chart(ctx, {
 
       graphlabel=[]
 
-      graphobj=[num[6],num[10],num[14],num[18]]
+      graphobj=[num[6],num[10],num[14],num4]
       console.log(graphobj)
       data1.datasets[0].data = graphobj
 
