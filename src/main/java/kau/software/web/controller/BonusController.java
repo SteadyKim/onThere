@@ -75,12 +75,12 @@ public class BonusController {
     @GetMapping("/cheonan")
     public String cheonan(Model model) {
         ArrayList<TravelDto> travelDtoArrayList = new ArrayList<>();
-        TravelDto travelDto1 = new TravelDto("국학원 한민족역사문화공원", "충청남도 천안시 동남구 목천읍 교천지산길", "frontend/png/cheonan1.jpg");
+        TravelDto travelDto1 = new TravelDto("국학원 한민족역사문화공원", "충청남도 천안시 동남구 목천읍 교천지산길", "frontend/png/cheonan1.jpg", "https://www.kookhakwon.org/");
         TravelDto travelDto2 = new TravelDto("천왕사 꽃정원", "충청남도 천안시 동남구 광덕면 원터길", "frontend/png/cheonan2.jpg");
-        TravelDto travelDto3 = new TravelDto("아름다운정원 화수목", "충청남도 천안시 동남구 목천읍 교천지산길", "frontend/png/cheonan3.jpg");
-        TravelDto travelDto4 = new TravelDto("유관순열사 사적지", "충청남도 천안시 동남구 병천면 유관순길", "frontend/png/cheonan4.jpg");
-        TravelDto travelDto5 = new TravelDto("독립기념관", "충청남도 천안시 동남구 목천읍 독립기념관로", "frontend/png/cheonan5.jpg");
-        TravelDto travelDto6 = new TravelDto("왕지봉 배꽃", "충청남도 천안시 서북구 성환읍 왕지1길", "frontend/png/cheonan6.jpg");
+        TravelDto travelDto3 = new TravelDto("아름다운정원 화수목", "충청남도 천안시 동남구 목천읍 교천지산길", "frontend/png/cheonan3.jpg","http://www.flostree.com/default/");
+        TravelDto travelDto4 = new TravelDto("유관순열사 사적지", "충청남도 천안시 동남구 병천면 유관순길", "frontend/png/cheonan4.jpg","http://cheonan.go.kr/yugwansun.do");
+        TravelDto travelDto5 = new TravelDto("독립기념관", "충청남도 천안시 동남구 목천읍 독립기념관로", "frontend/png/cheonan5.jpg","https://i815.or.kr/");
+        TravelDto travelDto6 = new TravelDto("왕지봉 배꽃", "충청남도 천안시 서북구 성환읍 왕지1길", "frontend/png/cheonan6.jpg","https://www.cheonan.go.kr/prog/tursmCn/tour/sub01_01/view.do?cntno=19");
         TravelDto travelDto7 = new TravelDto("천안종합휴양관광지", "충청남도 천안시 동남구 성남면 종합휴양지로", "frontend/png/cheonan7.jpg");
         TravelDto travelDto8 = new TravelDto("천호지 야경", "충청남도 천안시 동남구 단대로", "frontend/png/cheonan8.jpg");
 
@@ -101,14 +101,14 @@ public class BonusController {
     @GetMapping("/busan")
     public String busan(Model model) {
         ArrayList<TravelDto> travelDtoArrayList = new ArrayList<>();
-        TravelDto travelDto1 = new TravelDto("태종대", "부산광역시 영도구 전망로 24", "frontend/png/busan1.jpg");
-        TravelDto travelDto2 = new TravelDto("감천문화마을", "부산 사하구 감천동 10-63", "frontend/png/busan2.jpg");
+        TravelDto travelDto1 = new TravelDto("태종대", "부산광역시 영도구 전망로 24", "frontend/png/busan1.jpg","https://www.bisco.or.kr/taejongdae/");
+        TravelDto travelDto2 = new TravelDto("감천문화마을", "부산 사하구 감천동 10-63", "frontend/png/busan2.jpg","https://www.gamcheon.or.kr/");
         TravelDto travelDto3 = new TravelDto("해운대해수욕장", "부산광역시 해운대구 중1동 해운대해변로 264", "frontend/png/busan3.jpg");
         TravelDto travelDto4 = new TravelDto("용궁구름다리", "부산광역시 서구 암남동 703", "frontend/png/busan4.jpg");
-        TravelDto travelDto5 = new TravelDto("다대포해해수욕장", "부산광역시 사하구 다대동 몰운대1길 14", "frontend/png/busan5.jpg");
-        TravelDto travelDto6 = new TravelDto("흰여울문화마을", "부산광역시 영도구 영선동4가 1043", "frontend/png/busan6.jpg");
-        TravelDto travelDto7 = new TravelDto("송정해수욕장", "부산광역시 해운대구 송정도 712-2", "frontend/png/busan7.jpg");
-        TravelDto travelDto8 = new TravelDto("오륙도 스카이워크", "부산 남구 용호동 산 197-4", "frontend/png/busan8.png");
+        TravelDto travelDto5 = new TravelDto("다대포해수욕장", "부산광역시 사하구 다대동 몰운대1길 14", "frontend/png/busan5.jpg","https://www.saha.go.kr/tour/contents.do?mId=0101030000");
+        TravelDto travelDto6 = new TravelDto("흰여울문화마을", "부산광역시 영도구 영선동4가 1043", "frontend/png/busan6.jpg","http://www.ydculture.com/");
+        TravelDto travelDto7 = new TravelDto("송정해수욕장", "부산광역시 해운대구 송정도 712-2", "frontend/png/busan7.jpg","http://sunnfun.haeundae.go.kr/");
+        TravelDto travelDto8 = new TravelDto("오륙도 스카이워크", "부산 남구 용호동 산 197-4", "frontend/png/busan8.png","https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=6cb1642d-b578-462f-82c6-b1c1ef468af7&big_category=undefined&mid_category=undefined&big_area=undefined&referrer=https%3A%2F%2Fkorean.visitkorea.or.kr%2Fkor%2Fbz15%2Fwhere%2Fwhere_tour.jsp%3Fcid%3D1940208");
 
         travelDtoArrayList.add(travelDto1);
         travelDtoArrayList.add(travelDto2);
